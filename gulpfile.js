@@ -1,61 +1,82 @@
-"use strict";
+// Requires Gulp v4.
+// $ npm uninstall --global gulp gulp-cli
+// $ rm /usr/local/share/man/man1/gulp.1
+// $ npm install --global gulp-cli
+// $ npm install
+const { src, dest, watch, series, parallel } = require('gulp');
+const browsersync = require('browser-sync').create();
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const sasslint = require('gulp-sass-lint');
+const cache = require('gulp-cached');
+const notify = require('gulp-notify');
+const beeper = require('beeper');
 
-// Load plugins
-const browsersync = require("browser-sync").create();
-const del = require("del");
-const gulp = require("gulp");
-const merge = require("merge-stream");
+// Compile CSS from Sass.
+function buildStyles() {
+  return src('scss/base.scss')
+    .pipe(plumbError()) // Global error handler through all pipes.
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7']))
+    .pipe(sourcemaps.write())
+    .pipe(dest('css/'))
+    .pipe(browsersync.reload({ stream: true }));
+}
 
-// BrowserSync
+// Watch changes on all *.scss files, lint them and
+// trigger buildStyles() at the end.
+function watchFiles() {
+  watch(
+    ['scss/*.scss', 'scss/**/*.scss'],
+    { events: 'all', ignoreInitial: false },
+    series(sassLint, buildStyles)
+  );
+}
+
+// Init BrowserSync.
 function browserSync(done) {
   browsersync.init({
-    server: {
-      baseDir: "./"
-    },
-    port: 3000
+    proxy: 'blog.localhost', // Change this value to match your local URL.
+    socket: {
+      domain: 'localhost:3000'
+    }
   });
   done();
 }
 
-// BrowserSync reload
-function browserSyncReload(done) {
-  browsersync.reload();
-  done();
+// Init Sass linter.
+function sassLint() {
+  return src(['scss/*.scss', 'scss/**/*.scss'])
+    .pipe(cache('sasslint'))
+    .pipe(sasslint({
+      configFile: '.sass-lint.yml'
+    }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
 }
 
-// Clean vendor
-function clean() {
-  return del(["./vendor/"]);
+// Error handler.
+function plumbError() {
+  return plumber({
+    errorHandler: function(err) {
+      notify.onError({
+        templateOptions: {
+          date: new Date()
+        },
+        title: "Gulp error in " + err.plugin,
+        message:  err.formatted
+      })(err);
+      beeper();
+      this.emit('end');
+    }
+  })
 }
 
-// Bring third party dependencies from node_modules into vendor directory
-function modules() {
-  // Bootstrap
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap'));
-  // jQuery
-  var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
-    .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, jquery);
-}
-
-// Watch files
-function watchFiles() {
-  gulp.watch("./**/*.css", browserSyncReload);
-  gulp.watch("./**/*.html", browserSyncReload);
-}
-
-// Define complex tasks
-const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor);
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
-
-// Export tasks
-exports.clean = clean;
-exports.vendor = vendor;
-exports.build = build;
-exports.watch = watch;
-exports.default = build;
+// Export commands.
+exports.default = parallel(browserSync, watchFiles); // $ gulp
+exports.sass = buildStyles; // $ gulp sass
+exports.watch = watchFiles; // $ gulp watch
+exports.build = series(buildStyles); // $ gulp build

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "scss/variables.sass"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACI;EACA;;AACA;EACI",
+  "file": "css/variables.css"
+}
