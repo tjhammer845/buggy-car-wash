@@ -1,0 +1,63 @@
+/*********************************************/
+/*** BUGGY CAR WASH - VARIABLES STYLESHEET ***/
+/*********************************************/
+
+
+/* Color Sceme */
+$primary-color: #1E5B8F; // buggy dark blue
+$secondary-color: #0084B5; // buggy light blue
+$tertiary-color: #F7D441; // buggy yellow
+
+$gradient-light-blue: #B5E1F2; // buggy gradient - light blue - top
+$gradient-dark-blue: #1384B5;// buggy gradient - dark blue - bottom
+
+$white: #fff; // default white
+$black: #000; // default black
+$red: #ED2324; // alert red
+
+
+/* Font Stack */
+$primary-font-stack: "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+
+
+/* Font Styles */
+$default-font-size: 16px;
+$header-font: $primary-font-stack bold $black;
+$general-font: $primary-font-stack 1rem normal $black;
+
+
+/* Custom Variables */
+$max-container-width: 1200px; // Max set width for bootstrap container in desktop
+$border-radius: 15px;
+
+
+/* Mixins - Media Queries */
+$desktop-width: 1024px;
+$tablet-width: 768px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+@mixin retina {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+@mixin print {
+    @media print {
+        @content;
+    }
+}

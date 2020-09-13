@@ -1,0 +1,88 @@
+/* Imported Styles */
+@import "variables.scss"; // Buggy Car Wash Site Variables and Mixins
+
+
+
+/****************************************/
+/*** BUGGY CAR WASH - BASE STYLESHEET ***/
+/****************************************/
+
+
+/* DEFAULT STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html {
+    font-size: $default-font-size;
+}
+body {
+    background: $white;
+
+    // Typography
+    h1, h2, h3, h4, h5, h6 {
+        font: $header-font;
+    }
+    h1 {
+        font-size: 2.2rem;
+    } 
+    h2 {
+        font-size: 2.0rem;
+    } 
+    h3 {
+        font-size: 1.8rem;
+    }
+    h4 {
+        font-size: 1.6rem;
+    }
+    h5 {
+        font-size: 1.4rem;
+    } 
+    h6 {
+        font-size: 1.2rem;
+    }
+    p {
+        font: $general-font;
+    }
+
+    // Tables
+    table {
+        border-spacing: 0; 
+        border-collapse: collapse; 
+    }
+    td {
+        text-align: left;
+        font-weight: normal;
+    }
+}
+
+
+/* CUSTOM STYLES */
+// Bootstrap Modifications
+div.container {
+    width: inherit;
+    margin: auto;
+    @include desktop {
+        width: $max-container-width; // inherit Bootstap's container widths
+    }
+}
+
+// Special Classes
+.primary-gradient {
+    background: $gradient-light-blue; /* Old browsers */
+    background: -moz-linear-gradient(top,  $gradient-light-blue 0%, $gradient-dark-blue 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  $gradient-light-blue 0%,$gradient-dark-blue 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  $gradient-light-blue 0%,$gradient-dark-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-light-blue', endColorstr='$gradient-dark-blue',GradientType=0 ); /* IE6-9 */
+}
+
+// Main Navigation
+#mainNav.navbar {
+    background: $secondary-color;
+    height: auto;
+    max-height: 110px;
+
+}
+
+

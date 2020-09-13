@@ -1,82 +1,50 @@
-// Requires Gulp v4.
-// $ npm uninstall --global gulp gulp-cli
-// $ rm /usr/local/share/man/man1/gulp.1
-// $ npm install --global gulp-cli
-// $ npm install
-const { src, dest, watch, series, parallel } = require('gulp');
-const browsersync = require('browser-sync').create();
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
-const plumber = require('gulp-plumber');
-const sasslint = require('gulp-sass-lint');
-const cache = require('gulp-cached');
-const notify = require('gulp-notify');
-const beeper = require('beeper');
+var gulp = require("gulp"),
+  rimraf = require("rimraf"),
+  concat = require("gulp-concat"),
+  cssmin = require("gulp-cssmin"),
+  uglify = require("gulp-uglify"),
+  sass = require("gulp-sass"),
+  runSequence = require("run-sequence");
 
-// Compile CSS from Sass.
-function buildStyles() {
-  return src('scss/base.scss')
-    .pipe(plumbError()) // Global error handler through all pipes.
-    .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7']))
-    .pipe(sourcemaps.write())
-    .pipe(dest('css/'))
-    .pipe(browsersync.reload({ stream: true }));
-}
+var paths = {
+  root: "./",
+};
 
-// Watch changes on all *.scss files, lint them and
-// trigger buildStyles() at the end.
-function watchFiles() {
-  watch(
-    ['scss/*.scss', 'scss/**/*.scss'],
-    { events: 'all', ignoreInitial: false },
-    series(sassLint, buildStyles)
-  );
-}
+paths.js = paths.root + "vendor/js/*.js";
+paths.minJs = paths.root + "assets/js/*.min.js";
+paths.css = paths.root + "assets/css/*.css";
+paths.minCss = paths.root + "assets/css/*.min.css";
+paths.concatJsDest = paths.root + "assets/js/base.min.js";
+paths.concatCssDest = paths.root + "assets/css/base.min.css";
 
-// Init BrowserSync.
-function browserSync(done) {
-  browsersync.init({
-    proxy: 'blog.localhost', // Change this value to match your local URL.
-    socket: {
-      domain: 'localhost:3000'
-    }
+gulp.task("default", function (done) {
+  runSequence("clean", "sass", "min", function () {
+    done();
   });
-  done();
-}
+});
 
-// Init Sass linter.
-function sassLint() {
-  return src(['scss/*.scss', 'scss/**/*.scss'])
-    .pipe(cache('sasslint'))
-    .pipe(sasslint({
-      configFile: '.sass-lint.yml'
-    }))
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError());
-}
-
-// Error handler.
-function plumbError() {
-  return plumber({
-    errorHandler: function(err) {
-      notify.onError({
-        templateOptions: {
-          date: new Date()
-        },
-        title: "Gulp error in " + err.plugin,
-        message:  err.formatted
-      })(err);
-      beeper();
-      this.emit('end');
-    }
-  })
-}
-
-// Export commands.
-exports.default = parallel(browserSync, watchFiles); // $ gulp
-exports.sass = buildStyles; // $ gulp sass
-exports.watch = watchFiles; // $ gulp watch
-exports.build = series(buildStyles); // $ gulp build
+gulp.task("clean:js", function (cb) {
+  rimraf(paths.concatJsDest, cb);
+});
+gulp.task("clean:css", function (cb) {
+  rimraf(paths.concatCssDest, cb);
+});
+gulp.task("clean", ["clean:js", "clean:css"]);
+gulp.task("sass", function () {
+  return gulp.src("./vendor/scss/*.scss").pipe(sass()).pipe(gulp.dest("./assets/css"));
+});
+gulp.task("min:js", function () {
+  return gulp
+    .src([paths.js, "!" + paths.minJs], { base: "." })
+    .pipe(concat(paths.concatJsDest))
+    .pipe(uglify())
+    .pipe(gulp.dest("."));
+});
+gulp.task("min:css", function () {
+  return gulp
+    .src([paths.css, "!" + paths.minCss])
+    .pipe(concat(paths.concatCssDest))
+    .pipe(cssmin())
+    .pipe(gulp.dest("."));
+});
+gulp.task("min", ["min:js", "min:css"]);
