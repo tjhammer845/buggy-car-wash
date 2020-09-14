@@ -21,58 +21,142 @@
         rel="stylesheet">
     <!-- Buggy Car Wash - Base CSS -->
     <link href="assets/css/base.min.css" rel="stylesheet" />
-
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Logo here</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Car Wash
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dog Wash</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gift Cards</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                </ul>
+    <header id="buggyHeader" class="w-100">
+        <!-- Navigation -->
+        <section id="topBar" class="d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-end">
+                        <span class="text-uppercase font-weight-bold mr-4">Open 24 Hours!</span>
+                        <span class="mr-4">
+                            <span class="bg-white circle-icon rounded-circle mr-1"><i
+                                    class="fa fas fa-phone-alt"></i></span>
+                            203-495-9945
+                        </span>
+                        <span class="mr-4">
+                            <span class="bg-white circle-icon rounded-circle mr-1"> <i
+                                    class="fa fas fa-map-marker-alt"></i></span>
+                            51 Middletown Ave, North Haven, CT
+                        </span>
+                        <a class="hvr-pop icon-link circle-icon rounded-circle mr-2" href="#"
+                            title="Buggy Instagram Page"><i class="fa fab fa-instagram"></i></a>
+                        <a class="hvr-pop icon-link circle-icon rounded-circle" href="#" title="Buggy Facebook Page"><i
+                                class="fa fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-
+        </section>
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark static-top p-0">
+            <div class="container">
+                <a class="navbar-brand home p-0" href="/">
+                    <img src="./assets/images/main-logo.png" alt="Buggy Car Wash logo" class="logo-lg mt-md-n5 mb-md-n5"
+                        style="margin-top: 5px;">
+                    <img src="./assets/images/main-logo-small.png" alt="Buggy Car Wash logo" class="logo-sm m-0"><span
+                        class="sr-only">Buggy Car Wash - go to Home</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link hvr-icon-pop" href="#"><span class="hvr-icon">Car Wash</span>
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-4">
+                            <a class="nav-link hvr-icon-pop" href="#"><span class="hvr-icon">Dog Wash</span></a>
+                        </li>
+                        <li class="nav-item ml-4">
+                            <a class="nav-link hvr-icon-pop" href="#"><span class="hvr-icon">Gift Cards</span></a>
+                        </li>
+                        <li class="nav-item ml-4">
+                            <a class="nav-link hvr-icon-pop" href="#"><span class="hvr-icon">About Us</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Welcome to Buggy Car Wash</h1>
-                <p class="lead">
-                    Buggy Car Wash is a professional, locally owned and operated car and dog wash in North Haven,
-                    Connecticut.
-                    Protect the finish of your vehicle with our advanced touch-free wash equipment. Our newest Ultimate
-                    Platinum
-                    Wash will keep your car or truck spotless. And don’t miss our new self-service dog wash rooms. </p>
+    <main class="content w-100">
+        <section class="buggy-carousel pb-sm-5">
+            <div class="container-fluid p-0">
+                <div id="carouselMain" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="./assets/images/slideshow/slide1.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>...</h5>
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./assets/images/slideshow/slide2.jpg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>...</h5>
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./assets/images/slideshow/slide3.jpg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>...</h5>
+                                <p>...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="buggy-welcome">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="mt-5">Welcome to Buggy Car Wash</h1>
+                        <p>
+                            Buggy Car Wash is a professional, locally owned and operated car and dog wash in North
+                            Haven,
+                            Connecticut. Protect the finish of your vehicle with our advanced touch-free wash equipment.
+                            Our
+                            newest
+                            Ultimate Platinum Wash will keep your car or truck spotless. And don’t miss our new
+                            self-service
+                            dog wash rooms.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="assets/js/base.min.js"></script>
+    </footer>
     <script src="vendor/jquery/jquery.slim.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/base.min.js"></script>
 </body>
 
 </html>

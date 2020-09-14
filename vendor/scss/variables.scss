@@ -7,6 +7,9 @@
 $primary-color: #1E5B8F; // buggy dark blue
 $secondary-color: #0084B5; // buggy light blue
 $tertiary-color: #F7D441; // buggy yellow
+$quaternary-color: #97D0E7; // buggy background lighter blue
+$quinary-color: #D4EBF5; // buggy background lightest blue
+
 
 $gradient-light-blue: #B5E1F2; // buggy gradient - light blue - top
 $gradient-dark-blue: #1384B5;// buggy gradient - dark blue - bottom
@@ -15,33 +18,128 @@ $white: #fff; // default white
 $black: #000; // default black
 $red: #ED2324; // alert red
 
-
 /* Font Stack */
 $primary-font-stack: "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
 
-
 /* Font Styles */
 $default-font-size: 16px;
-$header-font: $primary-font-stack bold $black;
-$general-font: $primary-font-stack 1rem normal $black;
-
+$header-font: bold $default-font-size $primary-font-stack;
+$general-font: 600 $default-font-size $primary-font-stack;
 
 /* Custom Variables */
-$max-container-width: 1200px; // Max set width for bootstrap container in desktop
+$max-container-width: 1220px; // Max set width for bootstrap container in desktop
 $border-radius: 15px;
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
 
+/* Buggy Bubble Pop CSS3 Effects */
+// Pop
+@-webkit-keyframes hvr-pop {
+    50% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+  @keyframes hvr-pop {
+    50% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+  .hvr-pop {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
+    -webkit-animation-name: hvr-pop;
+    animation-name: hvr-pop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+
+// Icon Pop
+@-webkit-keyframes hvr-icon-pop {
+    50% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+  }
+  @keyframes hvr-icon-pop {
+    50% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+  }
+  .hvr-icon-pop {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-icon-pop .hvr-icon {
+    display:inline-block;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-icon-pop:hover .hvr-icon, .hvr-icon-pop:focus .hvr-icon, .hvr-icon-pop:active .hvr-icon {
+    -webkit-animation-name: hvr-icon-pop;
+    animation-name: hvr-icon-pop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
 
 /* Mixins - Media Queries */
-$desktop-width: 1024px;
+$desktop-lg-width: 1220px;
+$desktop-sm-width: 1024px;
 $tablet-width: 768px;
 
-@mixin desktop {
-    @media (min-width: #{$desktop-width}) {
+@mixin desktop-lg {
+    @media (min-width: #{$desktop-lg-width}) {
+        @content;
+    }
+}
+@mixin desktop-sm {
+    @media (min-width: #{$desktop-sm-width}) {
         @content;
     }
 }
 @mixin tablet {
-    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-sm-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet-and-up {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+@mixin tablet-and-below {
+    @media (max-width: #{$desktop-sm-width - 1px}) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: #{$tablet-width - 1px}) {
         @content;
     }
 }

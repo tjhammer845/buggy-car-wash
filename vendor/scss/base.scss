@@ -21,29 +21,37 @@ body {
     background: $white;
 
     // Typography
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
         font: $header-font;
+        color: $black;
     }
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        line-height: 3.125rem;
     } 
     h2 {
-        font-size: 2.0rem;
+        font-size: 2.25rem;
+        line-height: 2.875rem;
     } 
     h3 {
-        font-size: 1.8rem;
-    }
-    h4 {
-        font-size: 1.6rem;
-    }
-    h5 {
-        font-size: 1.4rem;
-    } 
-    h6 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
     p {
         font: $general-font;
+        font-size: 1.375rem;
+        line-height: 1.875rem;
+        color: $black;
+    }
+
+    // Link styles - tags declared in variable.scss - Contribution by Alex King
+    #{$a-tags} {
+        color: $primary-color;
+        text-decoration: none;
+    }
+    #{$a-tags-hover} {
+        color: $secondary-color;
+        text-decoration: none;
     }
 
     // Tables
@@ -63,7 +71,7 @@ body {
 div.container {
     width: inherit;
     margin: auto;
-    @include desktop {
+    @include desktop-lg {
         width: $max-container-width; // inherit Bootstap's container widths
     }
 }
@@ -76,13 +84,113 @@ div.container {
     background: linear-gradient(to bottom,  $gradient-light-blue 0%,$gradient-dark-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-light-blue', endColorstr='$gradient-dark-blue',GradientType=0 ); /* IE6-9 */
 }
-
-// Main Navigation
-#mainNav.navbar {
-    background: $secondary-color;
-    height: auto;
-    max-height: 110px;
-
+.drop-shadow {
+    -webkit-box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.42);
+    -moz-box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.42);
+    box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.42);
+}
+.delay {
+    -webkit-animation: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+.sticky { /* The sticky class is added to the header with JS when it reaches its scroll position */
+    position: fixed!important;
+    top: 0!important;
+}
+.drop-opacity { /* The drop-opacity class is added to the main nav to add transparency to its background */
+    background: rgba($secondary-color, .9)!important;
+}
+.sticky + .content { /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+    padding-top: 152px;
+}
+.circle-icon {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+}
+.fa { // font awesome icons
+    color: $primary-color;
+}
+.fa.fas { // phone and address icons
+    font-size: 0.9rem;
+    margin: 0!important;
+}
+.icon-link { // social media links
+    background: $white;
+    &:active, &:hover {
+        background: $secondary-color;
+        .fa {
+            color: $white;
+        }
+    }
 }
 
 
+// Header
+header {
+    z-index: 2;
+
+    // Top Bar
+    #topBar {
+        background: $primary-color;
+        height: 100vh;
+        max-height: 42px;
+        color: $white;
+    }
+
+    // Main Navigation
+    #mainNav {
+        background: $secondary-color;
+        height: 100vh;
+        max-height: 110px;
+
+        // Site Logo - Linked to Homepage
+        .navbar-brand {
+            z-index: 3;
+            .logo-lg {
+                display: none;
+                @include desktop-sm {
+                    display: inline-block;
+                    max-width: 315px;
+                }
+            }
+            .logo-sm {
+                display: none;
+                @include tablet-and-below {
+                    display: inline-block;
+                    max-width: 315px;
+                }
+            }
+        }
+
+        // Main Navigation Links
+        #navbarResponsive {
+            ul.navbar-nav {
+                li.nav-item {
+                    a.nav-link {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                }
+                li.nav-item.active {
+                    border: solid 1px $white;
+                }
+            }
+        }
+    }
+}
+
+// Main Content
+main {
+    background: $quinary-color;
+
+    // Carousel
+    .buggy-carousel {
+        background: $quaternary-color;
+        z-index: 0;
+    }
+}
