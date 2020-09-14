@@ -110,7 +110,8 @@ $a-tags-hover: 'a:active, a:hover';
 
 /* Mixins - Media Queries */
 $desktop-lg-width: 1220px;
-$desktop-sm-width: 1024px;
+$desktop-md-width: 1024px;
+$desktop-sm-width: 992px;
 $tablet-width: 768px;
 
 @mixin desktop-lg {
@@ -118,8 +119,33 @@ $tablet-width: 768px;
         @content;
     }
 }
+@mixin desktop-md {
+    @media (min-width: #{$desktop-md-width}) and (max-width: #{$desktop-lg-width - 1px}) {
+        @content;
+    }
+}
+@mixin desktop-md-and-up {
+    @media (min-width: #{$desktop-md-width}) {
+        @content;
+    }
+}
+@mixin desktop-md-and-below {
+    @media (max-width: #{$desktop-lg-width - 1px}) {
+        @content;
+    }
+}
 @mixin desktop-sm {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-md-width - 1px}) {
+        @content;
+    }
+}
+@mixin desktop-sm-and-up {
     @media (min-width: #{$desktop-sm-width}) {
+        @content;
+    }
+}
+@mixin desktop-sm-and-below {
+    @media (max-width: #{$desktop-md-width - 1px}) {
         @content;
     }
 }

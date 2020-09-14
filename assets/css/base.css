@@ -123,9 +123,14 @@ body {
 div.container {
   width: inherit;
   margin: auto; }
-  @media (min-width: 1220px) {
+  @media (min-width: 992px) {
     div.container {
       width: 1220px; } }
+  @media (max-width: 991px) {
+    div.container {
+      width: 100%;
+      max-width: 100%;
+      margin: auto; } }
 
 .primary-gradient {
   background: #B5E1F2;
@@ -187,24 +192,28 @@ header {
   z-index: 2; }
   header #topBar {
     background: #1E5B8F;
-    height: 100vh;
-    max-height: 42px;
-    color: #fff; }
+    min-height: 42px;
+    color: #fff;
+    font-size: 1rem; }
+    header #topBar .open-hours {
+      font-size: 1.125rem; }
+    @media (max-width: 1219px) {
+      header #topBar {
+        font-size: 0.938rem; } }
   header #mainNav {
     background: #0084B5;
-    height: 100vh;
-    max-height: 110px; }
+    min-height: 110px; }
     header #mainNav .navbar-brand {
       z-index: 3; }
       header #mainNav .navbar-brand .logo-lg {
         display: none; }
-        @media (min-width: 1024px) {
+        @media (min-width: 992px) {
           header #mainNav .navbar-brand .logo-lg {
             display: inline-block;
             max-width: 315px; } }
       header #mainNav .navbar-brand .logo-sm {
         display: none; }
-        @media (max-width: 1023px) {
+        @media (max-width: 991px) {
           header #mainNav .navbar-brand .logo-sm {
             display: inline-block;
             max-width: 315px; } }

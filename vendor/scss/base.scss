@@ -71,8 +71,13 @@ body {
 div.container {
     width: inherit;
     margin: auto;
-    @include desktop-lg {
+    @include desktop-sm-and-up {
         width: $max-container-width; // inherit Bootstap's container widths
+    }
+    @include tablet-and-below {
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
     }
 }
 
@@ -136,23 +141,28 @@ header {
     // Top Bar
     #topBar {
         background: $primary-color;
-        height: 100vh;
-        max-height: 42px;
+        min-height: 42px;
         color: $white;
+        font-size: 1rem;
+        .open-hours {
+            font-size: 1.125rem
+        }
+        @include desktop-md-and-below {
+            font-size: 0.938rem;
+        }
     }
 
     // Main Navigation
     #mainNav {
         background: $secondary-color;
-        height: 100vh;
-        max-height: 110px;
+        min-height: 110px;
 
         // Site Logo - Linked to Homepage
         .navbar-brand {
             z-index: 3;
             .logo-lg {
                 display: none;
-                @include desktop-sm {
+                @include desktop-sm-and-up {
                     display: inline-block;
                     max-width: 315px;
                 }
