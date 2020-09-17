@@ -1,6 +1,5 @@
 /* Imported Styles */
-@import "variables.scss"; // Buggy Car Wash Site Variables and Mixins
-
+@import "responsive-table.scss"; // + // variables.scss - Site Variables and Mixins
 
 
 /****************************************/
@@ -28,11 +27,11 @@ body {
     h1 {
         font-size: 2.5rem;
         line-height: 3.125rem;
-    } 
+    }
     h2 {
         font-size: 2.25rem;
         line-height: 2.875rem;
-    } 
+    }
     h3 {
         font-size: 1.5rem;
         line-height: 2rem;
@@ -42,6 +41,9 @@ body {
         font-size: 1.375rem;
         line-height: 1.875rem;
         color: $black;
+        &.lead {
+            font-weight: 600;
+        }
     }
 
     // Link styles - tags declared in variable.scss - Contribution by Alex King
@@ -53,18 +55,7 @@ body {
         color: $secondary-color;
         text-decoration: none;
     }
-
-    // Tables
-    table {
-        border-spacing: 0; 
-        border-collapse: collapse; 
-    }
-    td {
-        text-align: left;
-        font-weight: normal;
-    }
 }
-
 
 /* CUSTOM STYLES */
 // Bootstrap Modifications
@@ -79,6 +70,23 @@ div.container {
         max-width: 100%;
         margin: auto;
     }
+}
+
+// Display Text Adjustments for Tables
+.display-1, .display-2, .display-3 {
+    font: $table-font;
+}
+.display-1, .display-3 {
+    text-align: center;
+}
+.display-1 {
+    font-size: 3.438rem;
+}
+.display-2 {
+    font-size: 2.5rem;
+}
+.display-3 {
+    font-size: 1.5rem;
 }
 
 // Special Classes
@@ -132,7 +140,9 @@ div.container {
         }
     }
 }
-
+.fa-check-circle { // table check icon
+    color: $green;
+}
 
 // Header
 header {
@@ -164,7 +174,7 @@ header {
                 display: none;
                 @include desktop-sm-and-up {
                     display: inline-block;
-                    max-width: 315px;
+                    max-width: 300px;
                 }
             }
             .logo-sm {
@@ -198,9 +208,62 @@ header {
 main {
     background: $quinary-color;
 
-    // Carousel
-    .buggy-carousel {
+    // Carousel Section
+    .carousel-section {
         background: $quaternary-color;
         z-index: 0;
+    }
+
+    // Welcome Section
+    .welcome-section {
+        .card-deck {
+            .card {
+                @include tablet-and-below {
+                    -ms-flex: unset;
+                    flex: unset;
+                    margin-bottom: 15px;
+                }
+                .card-text {
+                    font-size: 1.125rem;
+                }
+                img {
+                    max-height: 70px;
+                }
+            }
+        }
+    }
+
+    // Services Section
+    .services-section {
+        .carousel {
+            .jumbotron  {
+                @include mobile {
+                    padding-left: 45px;
+                    padding-right: 45px;
+                }
+            }
+            .carousel-control-prev, .carousel-control-next {
+                @extend .primary-gradient;
+                max-width: 30px;
+                .carousel-control-prev-icon, .carousel-control-next-icon {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    // Contact Section
+    .contact-section {
+        background: $white;
+        .contact-image{
+            text-align: center;
+            img {
+                background: $white;
+                border-radius: 6rem;
+                width: 11%;
+                margin-top: -6%;
+
+            }
+        }
     }
 }

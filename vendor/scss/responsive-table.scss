@@ -1,0 +1,98 @@
+/* Imported Styles */
+@import "variables.scss"; // Site Variables and Mixins
+
+
+/****************************************/
+/*** BUGGY CAR WASH - BASE STYLESHEET ***/
+/****************************************/
+
+
+/* DEFAULT TABLES STYLES */
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    empty-cells:show;
+}
+
+/* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
+@include table-responsive {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead {
+        tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    }
+    tr {
+        margin: 0 0 1rem 0;
+        &:nth-child(odd) {
+            background: #ccc;
+        }
+        td {
+
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+            &:before {
+                position: absolute;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                top: 3px;
+                left: 12px;
+                text-align: left;
+            }
+            &:after {
+                position: absolute;
+                top: 25px;
+                left: 12px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                font-size: 0.75rem;
+                text-align: left;
+            }
+            /*Label the data. You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow. */
+            &:nth-of-type(1):before { content: ""; }
+            &:nth-of-type(2):before { content: "Ultimate"; }
+            &:nth-of-type(3):before { content: "Supreme"; }
+            &:nth-of-type(4):before { content: "Deluxe"; }
+            &:nth-of-type(5):before { content: "Express"; }
+        }
+    }
+
+    // Soft Touch Car Wash Table
+    .table-soft-touch {
+        tr {
+            td {
+                &:nth-of-type(1):after { content: ""; }
+                &:nth-of-type(2):after { content: "$15"; }
+                &:nth-of-type(3):after { content: "$13"; }
+                &:nth-of-type(4):after { content: "$11"; }
+                &:nth-of-type(5):after { content: "$9"; }
+            }
+        }
+    }
+    .table-soft-touch {
+        tr {
+            td {
+                &:nth-of-type(1):after { content: ""; }
+                &:nth-of-type(2):after { content: "$15"; }
+                &:nth-of-type(3):after { content: "$12"; }
+                &:nth-of-type(4):after { content: "$10"; }
+                &:nth-of-type(5):after { content: "$8"; }
+            }
+        }
+    }
+}

@@ -1,0 +1,157 @@
+/* Imported Styles */
+/*********************************************/
+/*** BUGGY CAR WASH - VARIABLES STYLESHEET ***/
+/*********************************************/
+/* Color Sceme */
+/* Font Stack */
+/* Font Styles */
+/* Custom Variables */
+/* Buggy Bubble Pop CSS3 Effects */
+@-webkit-keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+
+.hvr-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0); }
+
+.hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
+  -webkit-animation-name: hvr-pop;
+  animation-name: hvr-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1; }
+
+@-webkit-keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+@keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+.hvr-icon-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+
+.hvr-icon-pop .hvr-icon {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out; }
+
+.hvr-icon-pop:hover .hvr-icon, .hvr-icon-pop:focus .hvr-icon, .hvr-icon-pop:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-pop;
+  animation-name: hvr-icon-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1; }
+
+/* Mixins - Media Queries */
+/* Responsive Table */
+/****************************************/
+/*** BUGGY CAR WASH - BASE STYLESHEET ***/
+/****************************************/
+/* DEFAULT TABLES STYLES */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  empty-cells: show; }
+
+/* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block; }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
+  tr {
+    margin: 0 0 1rem 0; }
+    tr:nth-child(odd) {
+      background: #ccc; }
+    tr td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      /*Label the data. You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow. */ }
+      tr td:before {
+        position: absolute;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        top: 3px;
+        left: 12px;
+        text-align: left; }
+      tr td:after {
+        position: absolute;
+        top: 25px;
+        left: 12px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        font-size: 0.75rem;
+        text-align: left; }
+      tr td:nth-of-type(1):before {
+        content: ""; }
+      tr td:nth-of-type(2):before {
+        content: "Ultimate"; }
+      tr td:nth-of-type(3):before {
+        content: "Supreme"; }
+      tr td:nth-of-type(4):before {
+        content: "Deluxe"; }
+      tr td:nth-of-type(5):before {
+        content: "Express"; }
+  .table-soft-touch tr td:nth-of-type(1):after {
+    content: ""; }
+  .table-soft-touch tr td:nth-of-type(2):after {
+    content: "$15"; }
+  .table-soft-touch tr td:nth-of-type(3):after {
+    content: "$13"; }
+  .table-soft-touch tr td:nth-of-type(4):after {
+    content: "$11"; }
+  .table-soft-touch tr td:nth-of-type(5):after {
+    content: "$9"; }
+  .table-soft-touch tr td:nth-of-type(1):after {
+    content: ""; }
+  .table-soft-touch tr td:nth-of-type(2):after {
+    content: "$15"; }
+  .table-soft-touch tr td:nth-of-type(3):after {
+    content: "$12"; }
+  .table-soft-touch tr td:nth-of-type(4):after {
+    content: "$10"; }
+  .table-soft-touch tr td:nth-of-type(5):after {
+    content: "$8"; } }

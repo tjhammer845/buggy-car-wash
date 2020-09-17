@@ -17,14 +17,15 @@ $gradient-dark-blue: #1384B5;// buggy gradient - dark blue - bottom
 $white: #fff; // default white
 $black: #000; // default black
 $red: #ED2324; // alert red
-
+$green: #17B25F; // buggy green
 /* Font Stack */
 $primary-font-stack: "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
 
 /* Font Styles */
 $default-font-size: 16px;
 $header-font: bold $default-font-size $primary-font-stack;
-$general-font: 600 $default-font-size $primary-font-stack;
+$general-font: 500 $default-font-size $primary-font-stack;
+$table-font: 600 $default-font-size $primary-font-stack;
 
 /* Custom Variables */
 $max-container-width: 1220px; // Max set width for bootstrap container in desktop
@@ -166,6 +167,15 @@ $tablet-width: 768px;
 }
 @mixin mobile {
     @media (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+/* Responsive Table */
+@mixin table-responsive {
+    @media only screen 
+    and (max-width: 760px), (min-device-width: $tablet-width) 
+    and (max-device-width: $desktop-md-width)  {
         @content;
     }
 }
