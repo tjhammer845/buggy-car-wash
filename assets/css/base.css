@@ -210,19 +210,19 @@ div.container {
       max-width: 100%;
       margin: auto; } }
 
-.display-1, .display-2, .display-3 {
+.display-2, .display-3, .display-4 {
   font: 600 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif; }
 
-.display-1, .display-3 {
+.display-2, .display-4 {
   text-align: center; }
 
-.display-1 {
+.display-2 {
   font-size: 3.438rem; }
 
-.display-2 {
+.display-3 {
   font-size: 2.5rem; }
 
-.display-3 {
+.display-4 {
   font-size: 1.5rem; }
 
 .primary-gradient, main .services-section .carousel .carousel-control-prev, main .services-section .carousel .carousel-control-next {

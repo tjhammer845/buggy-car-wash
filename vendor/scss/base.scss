@@ -73,19 +73,19 @@ div.container {
 }
 
 // Display Text Adjustments for Tables
-.display-1, .display-2, .display-3 {
+.display-2, .display-3, .display-4 {
     font: $table-font;
 }
-.display-1, .display-3 {
+.display-2, .display-4 {
     text-align: center;
 }
-.display-1 {
+.display-2 {
     font-size: 3.438rem;
 }
-.display-2 {
+.display-3 {
     font-size: 2.5rem;
 }
-.display-3 {
+.display-4 {
     font-size: 1.5rem;
 }
 
