@@ -73,11 +73,14 @@ div.container {
 }
 
 // Display Text Adjustments for Tables
-.display-2, .display-3, .display-4 {
+.display-1, .display-2, .display-3, .display-4 {
     font: $table-font;
 }
-.display-2, .display-4 {
+.display-1, .display-2, .display-4 {
     text-align: center;
+}
+.display-1 {
+    font-size: 4.125rem;
 }
 .display-2 {
     font-size: 3.438rem;
@@ -86,7 +89,7 @@ div.container {
     font-size: 2.5rem;
 }
 .display-4 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 // Special Classes
@@ -181,7 +184,6 @@ header {
                 display: none;
                 @include tablet-and-below {
                     display: inline-block;
-                    max-width: 315px;
                 }
             }
         }
@@ -235,19 +237,23 @@ main {
 
     // Services Section
     .services-section {
-        .carousel {
-            .jumbotron  {
-                @include mobile {
+        @include mobile {
+            .carousel {
+                .jumbotron  {
                     padding-left: 45px;
                     padding-right: 45px;
                 }
+                .carousel-control-prev, .carousel-control-next {
+                    max-width: 30px;
+                    .carousel-control-prev-icon, .carousel-control-next-icon {
+                        color: $secondary-color;
+                    }
+                }
             }
+        }
+        .carousel {
             .carousel-control-prev, .carousel-control-next {
                 @extend .primary-gradient;
-                max-width: 30px;
-                .carousel-control-prev-icon, .carousel-control-next-icon {
-                    color: $secondary-color;
-                }
             }
         }
     }
@@ -260,7 +266,7 @@ main {
             img {
                 background: $white;
                 border-radius: 6rem;
-                width: 11%;
+                width: 130px;
                 margin-top: -6%;
 
             }

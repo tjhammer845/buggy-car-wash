@@ -13,16 +13,52 @@ table {
     border-collapse: collapse;
     width: 100%;
     empty-cells:show;
+    .border.border-warning {
+        border-width: 5px!important;
+    }
+}
+table.table-self-service {
+    width: calc(100% - 178px);
+}
+
+@include tablet-and-up {
+    table {
+        th, tr {
+            td {
+                &:first-child {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+    
+    /* Add the title for the Best Deal Column */
+    .best-deal {
+        padding-bottom: 12px!important;
+        &:before {
+            content: "BEST DEAL!";
+            text-align: center;
+            height: 25px;
+            color: $red;
+            background: $yellow;
+            display: block;
+        }
+    }
 }
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
 @include table-responsive {
 
+    /* Remove Best Deal border in Mobile */
+    .border-warning {
+        border: none!important;
+    }
+
     /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr {
         display: block;
     }
-
+    
     /* Hide table headers (but not display: none;, for accessibility) */
     thead {
         tr {
@@ -63,16 +99,23 @@ table {
                 font-size: 0.75rem;
                 text-align: left;
             }
-            /*Label the data. You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow. */
-            &:nth-of-type(1):before { content: ""; }
-            &:nth-of-type(2):before { content: "Ultimate"; }
-            &:nth-of-type(3):before { content: "Supreme"; }
-            &:nth-of-type(4):before { content: "Deluxe"; }
-            &:nth-of-type(5):before { content: "Express"; }
         }
     }
 
-    // Soft Touch Car Wash Table
+    .table-soft-touch,
+    .table-touch-free {
+        tr {
+            td {
+                &:nth-of-type(1):before { content: ""; }
+                &:nth-of-type(2):before { content: "Ultimate"; }
+                &:nth-of-type(3):before { content: "Supreme"; }
+                &:nth-of-type(4):before { content: "Deluxe"; }
+                &:nth-of-type(5):before { content: "Express"; }
+            }
+        }
+    }
+
+    // Soft Touch Table
     .table-soft-touch {
         tr {
             td {
@@ -84,7 +127,9 @@ table {
             }
         }
     }
-    .table-soft-touch {
+
+    // Touch Free Table
+    .table-touch-free {
         tr {
             td {
                 &:nth-of-type(1):after { content: ""; }

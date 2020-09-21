@@ -85,9 +85,31 @@ table {
   border-collapse: collapse;
   width: 100%;
   empty-cells: show; }
+  table .border.border-warning {
+    border-width: 5px !important; }
+
+table.table-self-service {
+  width: calc(100% - 178px); }
+
+@media (min-width: 768px) {
+  table th td:first-child, table tr td:first-child {
+    max-width: 200px; }
+  /* Add the title for the Best Deal Column */
+  .best-deal {
+    padding-bottom: 12px !important; }
+    .best-deal:before {
+      content: "BEST DEAL!";
+      text-align: center;
+      height: 25px;
+      color: #ED2324;
+      background: #ffc107;
+      display: block; } }
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Remove Best Deal border in Mobile */
+  .border-warning {
+    border: none !important; }
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr {
     display: block; }
@@ -105,8 +127,7 @@ table {
       border: none;
       border-bottom: 1px solid #eee;
       position: relative;
-      padding-left: 50%;
-      /*Label the data. You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow. */ }
+      padding-left: 50%; }
       tr td:before {
         position: absolute;
         width: 45%;
@@ -125,16 +146,21 @@ table {
         font-weight: bold;
         font-size: 0.75rem;
         text-align: left; }
-      tr td:nth-of-type(1):before {
-        content: ""; }
-      tr td:nth-of-type(2):before {
-        content: "Ultimate"; }
-      tr td:nth-of-type(3):before {
-        content: "Supreme"; }
-      tr td:nth-of-type(4):before {
-        content: "Deluxe"; }
-      tr td:nth-of-type(5):before {
-        content: "Express"; }
+  .table-soft-touch tr td:nth-of-type(1):before,
+  .table-touch-free tr td:nth-of-type(1):before {
+    content: ""; }
+  .table-soft-touch tr td:nth-of-type(2):before,
+  .table-touch-free tr td:nth-of-type(2):before {
+    content: "Ultimate"; }
+  .table-soft-touch tr td:nth-of-type(3):before,
+  .table-touch-free tr td:nth-of-type(3):before {
+    content: "Supreme"; }
+  .table-soft-touch tr td:nth-of-type(4):before,
+  .table-touch-free tr td:nth-of-type(4):before {
+    content: "Deluxe"; }
+  .table-soft-touch tr td:nth-of-type(5):before,
+  .table-touch-free tr td:nth-of-type(5):before {
+    content: "Express"; }
   .table-soft-touch tr td:nth-of-type(1):after {
     content: ""; }
   .table-soft-touch tr td:nth-of-type(2):after {
@@ -145,13 +171,13 @@ table {
     content: "$11"; }
   .table-soft-touch tr td:nth-of-type(5):after {
     content: "$9"; }
-  .table-soft-touch tr td:nth-of-type(1):after {
+  .table-touch-free tr td:nth-of-type(1):after {
     content: ""; }
-  .table-soft-touch tr td:nth-of-type(2):after {
+  .table-touch-free tr td:nth-of-type(2):after {
     content: "$15"; }
-  .table-soft-touch tr td:nth-of-type(3):after {
+  .table-touch-free tr td:nth-of-type(3):after {
     content: "$12"; }
-  .table-soft-touch tr td:nth-of-type(4):after {
+  .table-touch-free tr td:nth-of-type(4):after {
     content: "$10"; }
-  .table-soft-touch tr td:nth-of-type(5):after {
+  .table-touch-free tr td:nth-of-type(5):after {
     content: "$8"; } }
