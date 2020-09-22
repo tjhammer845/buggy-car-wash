@@ -76,17 +76,20 @@
 
 /* Mixins - Media Queries */
 /* Responsive Table */
-/****************************************/
-/*** BUGGY CAR WASH - BASE STYLESHEET ***/
-/****************************************/
+/*****************************************************/
+/*** BUGGY CAR WASH - RESPONSIVE TABLES STYLESHEET ***/
+/*****************************************************/
 /* DEFAULT TABLES STYLES */
 table {
+  background: #EFEFEF;
   border-spacing: 0;
   border-collapse: collapse;
   width: 100%;
   empty-cells: show; }
   table .border.border-warning {
     border-width: 5px !important; }
+  table th {
+    background: #fff; }
 
 table.table-self-service {
   width: calc(100% - 178px); }

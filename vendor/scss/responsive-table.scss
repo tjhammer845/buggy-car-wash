@@ -1,14 +1,15 @@
 /* Imported Styles */
-@import "variables.scss"; // Site Variables and Mixins
+@import "variables.scss"; // site variables and mixins
 
 
-/****************************************/
-/*** BUGGY CAR WASH - BASE STYLESHEET ***/
-/****************************************/
+/*****************************************************/
+/*** BUGGY CAR WASH - RESPONSIVE TABLES STYLESHEET ***/
+/*****************************************************/
 
 
 /* DEFAULT TABLES STYLES */
 table {
+    background: #EFEFEF;
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
@@ -16,6 +17,10 @@ table {
     .border.border-warning {
         border-width: 5px!important;
     }
+    th {
+        background: $white;
+    }
+
 }
 table.table-self-service {
     width: calc(100% - 178px);
@@ -31,7 +36,7 @@ table.table-self-service {
             }
         }
     }
-    
+
     /* Add the title for the Best Deal Column */
     .best-deal {
         padding-bottom: 12px!important;

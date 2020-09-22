@@ -1,3 +1,8 @@
+/*******************************************/
+/*** BUGGY CAR WASH - STICKY HEADER JS ***/
+/*******************************************/
+
+
 // When the user scrolls the page, execute getSticky
 window.onscroll = function () { getStickyTransparency() };
 

@@ -1,5 +1,7 @@
 /* Imported Styles */
-@import "responsive-table.scss"; // + // variables.scss - Site Variables and Mixins
+@import "bubbles.scss"; // pure CSS animated bubbles styles
+@import "responsive-table.scss"; // responsive tables including site variables and mixins
+@import "parallax-footer.scss"; // parallax footer (and main) styles
 
 
 /****************************************/
@@ -9,6 +11,7 @@
 
 /* DEFAULT STYLES */
 * {
+    position: relative;
     margin: 0;
     padding: 0;
     border: 0;
@@ -17,7 +20,6 @@ html {
     font-size: $default-font-size;
 }
 body {
-    background: $white;
 
     // Typography
     h1, h2, h3 {
@@ -59,7 +61,10 @@ body {
 
 /* CUSTOM STYLES */
 // Bootstrap Modifications
-div.container {
+.container, .container-fluid {
+    z-index: 2;
+}
+.container {
     width: inherit;
     margin: auto;
     @include desktop-sm-and-up {
@@ -125,14 +130,12 @@ div.container {
     display: inline-block;
     width: 23px;
     height: 23px;
+    line-height: 23px;
     text-align: center;
-}
-.fa { // font awesome icons
-    color: $primary-color;
 }
 .fa.fas { // phone and address icons
     font-size: 0.9rem;
-    margin: 0!important;
+    margin: 0;
 }
 .icon-link { // social media links
     background: $white;
@@ -147,16 +150,61 @@ div.container {
     color: $green;
 }
 
+
+// Scroll to top button
+#return-to-top {
+    position: fixed;
+    z-index: 7;
+    bottom: 20px;
+    right: 20px;
+    background: rgba($secondary-color, .9);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 16px;
+        top: 13px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        background: rgba($primary-color, .9);
+        i {
+            color: #fff;
+            top: 5px;
+        }
+    }
+}
+
 // Header
 header {
-    z-index: 2;
+    z-index: 3;
 
     // Top Bar
     #topBar {
         background: $primary-color;
         min-height: 42px;
-        color: $white;
         font-size: 1rem;
+        .fa { // font awesome icons
+            color: $primary-color;
+        }
         .open-hours {
             font-size: 1.125rem
         }
@@ -172,7 +220,7 @@ header {
 
         // Site Logo - Linked to Homepage
         .navbar-brand {
-            z-index: 3;
+            z-index: 4;
             .logo-lg {
                 display: none;
                 @include desktop-sm-and-up {
@@ -211,9 +259,10 @@ main {
     background: $quinary-color;
 
     // Carousel Section
-    .carousel-section {
+    .carousel-container {
+        
         background: $quaternary-color;
-        z-index: 0;
+        z-index: 2;
     }
 
     // Welcome Section
@@ -258,9 +307,22 @@ main {
         }
     }
 
+    // Testimonials Section
+    .testimonials-section {
+        #testimonialCarousel {
+            .carousel-inner  {
+            background: $quinary-color;
+            z-index: 2;
+            min-height: 194px;
+            border-radius: $border-radius;
+            }
+        }
+    }
+
     // Contact Section
     .contact-section {
         background: $white;
+        z-index: 2;
         .contact-image{
             text-align: center;
             img {
@@ -270,6 +332,27 @@ main {
                 margin-top: -6%;
 
             }
+        }
+    }
+}
+
+// Footer
+#parallaxFooter {
+    background: $secondary-color;
+    z-index: -1;
+    .footer-container {
+        z-index: 3;
+        p {
+            font-size: 1rem;
+            .fa { // font awesome icons
+                color: $secondary-color;
+            }
+            @include desktop-md-and-below {
+                font-size: 0.938rem;
+            }
+        }
+        .copyright-container {
+            max-width: 270px;
         }
     }
 }
