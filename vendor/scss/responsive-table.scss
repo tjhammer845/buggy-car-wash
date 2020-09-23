@@ -20,14 +20,19 @@ table {
     th {
         background: $white;
     }
-
 }
 table.table-self-service {
-    width: calc(100% - 178px);
+    @include desktop-sm-and-up  {
+        width: calc(100% - 178px);
+    }
+    .fa-check-circle {
+        font-size: 24px;
+    }
 }
 
 @include tablet-and-up {
-    table {
+    .table-soft-touch,
+    .table-touch-free {
         th, tr {
             td {
                 &:first-child {
@@ -36,7 +41,6 @@ table.table-self-service {
             }
         }
     }
-
     /* Add the title for the Best Deal Column */
     .best-deal {
         padding-bottom: 12px!important;
@@ -73,7 +77,6 @@ table.table-self-service {
         }
     }
     tr {
-        margin: 0 0 1rem 0;
         &:nth-child(odd) {
             background: #ccc;
         }

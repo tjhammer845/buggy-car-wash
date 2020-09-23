@@ -96,6 +96,9 @@ body {
 .display-4 {
     font-size: 1.4rem;
 }
+.line-height-default {
+    line-height: 1;
+}
 
 // Special Classes
 .primary-gradient {
@@ -286,23 +289,22 @@ main {
 
     // Services Section
     .services-section {
-        @include mobile {
-            .carousel {
-                .jumbotron  {
-                    padding-left: 45px;
-                    padding-right: 45px;
-                }
-                .carousel-control-prev, .carousel-control-next {
-                    max-width: 30px;
-                    .carousel-control-prev-icon, .carousel-control-next-icon {
-                        color: $secondary-color;
+        #accordion {
+            .card {
+                a {
+                    h2 {
+                        color: $primary-color;
+                    }
+                    &:hover {
+                        .card-header {
+                            background: $primary-color;
+                            border-radius: calc(.25rem - 1px);
+                            h2 {
+                                color: $white;
+                            }
+                        }
                     }
                 }
-            }
-        }
-        .carousel {
-            .carousel-control-prev, .carousel-control-next {
-                @extend .primary-gradient;
             }
         }
     }
@@ -311,10 +313,10 @@ main {
     .testimonials-section {
         #testimonialCarousel {
             .carousel-inner  {
-            background: $quinary-color;
-            z-index: 2;
-            min-height: 194px;
-            border-radius: $border-radius;
+                background: $quinary-color;
+                z-index: 2;
+                min-height: 194px;
+                border-radius: $border-radius;
             }
         }
     }
@@ -344,6 +346,7 @@ main {
         z-index: 3;
         p {
             font-size: 1rem;
+            line-height: 1.4;
             .fa { // font awesome icons
                 color: $secondary-color;
             }

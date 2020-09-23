@@ -148,17 +148,17 @@
     position: absolute;
     width: 200px; }
   .bubble:after {
-    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%);
     /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(70%, rgba(255, 255, 255, 0)));
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(20%, rgba(255, 255, 255, 0)));
     /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%);
     /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%);
     /* IE10+ */
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 );
     /* IE6-9 fallback on horizontal gradient */
@@ -267,11 +267,17 @@ table {
   table th {
     background: #fff; }
 
-table.table-self-service {
-  width: calc(100% - 178px); }
+@media (min-width: 992px) {
+  table.table-self-service {
+    width: calc(100% - 178px); } }
+
+table.table-self-service .fa-check-circle {
+  font-size: 24px; }
 
 @media (min-width: 768px) {
-  table th td:first-child, table tr td:first-child {
+  .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
+  .table-touch-free th td:first-child,
+  .table-touch-free tr td:first-child {
     max-width: 200px; }
   /* Add the title for the Best Deal Column */
   .best-deal {
@@ -297,34 +303,32 @@ table.table-self-service {
     position: absolute;
     top: -9999px;
     left: -9999px; }
-  tr {
-    margin: 0 0 1rem 0; }
-    tr:nth-child(odd) {
-      background: #ccc; }
-    tr td {
-      /* Behave  like a "row" */
-      border: none;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      padding-left: 50%; }
-      tr td:before {
-        position: absolute;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        top: 3px;
-        left: 12px;
-        text-align: left; }
-      tr td:after {
-        position: absolute;
-        top: 25px;
-        left: 12px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-weight: bold;
-        font-size: 0.75rem;
-        text-align: left; }
+  tr:nth-child(odd) {
+    background: #ccc; }
+  tr td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; }
+    tr td:before {
+      position: absolute;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      top: 3px;
+      left: 12px;
+      text-align: left; }
+    tr td:after {
+      position: absolute;
+      top: 25px;
+      left: 12px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 0.75rem;
+      text-align: left; }
   .table-soft-touch tr td:nth-of-type(1):before,
   .table-touch-free tr td:nth-of-type(1):before {
     content: ""; }
@@ -457,7 +461,10 @@ body a:active, body a:hover {
 .display-4 {
   font-size: 1.4rem; }
 
-.primary-gradient, main .services-section .carousel .carousel-control-prev, main .services-section .carousel .carousel-control-next {
+.line-height-default {
+  line-height: 1; }
+
+.primary-gradient {
   background: #B5E1F2;
   /* Old browsers */
   background: -moz-linear-gradient(top, #B5E1F2 0%, #1384B5 100%);
@@ -601,14 +608,13 @@ main {
     font-size: 1.125rem; }
   main .welcome-section .card-deck .card img {
     max-height: 70px; }
-  @media (max-width: 767px) {
-    main .services-section .carousel .jumbotron {
-      padding-left: 45px;
-      padding-right: 45px; }
-    main .services-section .carousel .carousel-control-prev, main .services-section .carousel .carousel-control-next {
-      max-width: 30px; }
-      main .services-section .carousel .carousel-control-prev .carousel-control-prev-icon, main .services-section .carousel .carousel-control-prev .carousel-control-next-icon, main .services-section .carousel .carousel-control-next .carousel-control-prev-icon, main .services-section .carousel .carousel-control-next .carousel-control-next-icon {
-        color: #0084B5; } }
+  main .services-section #accordion .card a h2 {
+    color: #1E5B8F; }
+  main .services-section #accordion .card a:hover .card-header {
+    background: #1E5B8F;
+    border-radius: calc(.25rem - 1px); }
+    main .services-section #accordion .card a:hover .card-header h2 {
+      color: #fff; }
   main .testimonials-section #testimonialCarousel .carousel-inner {
     background: #D4EBF5;
     z-index: 2;
@@ -631,7 +637,8 @@ main {
   #parallaxFooter .footer-container {
     z-index: 3; }
     #parallaxFooter .footer-container p {
-      font-size: 1rem; }
+      font-size: 1rem;
+      line-height: 1.4; }
       #parallaxFooter .footer-container p .fa {
         color: #0084B5; }
       @media (max-width: 1219px) {

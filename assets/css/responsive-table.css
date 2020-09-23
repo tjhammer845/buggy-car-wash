@@ -91,11 +91,17 @@ table {
   table th {
     background: #fff; }
 
-table.table-self-service {
-  width: calc(100% - 178px); }
+@media (min-width: 992px) {
+  table.table-self-service {
+    width: calc(100% - 178px); } }
+
+table.table-self-service .fa-check-circle {
+  font-size: 24px; }
 
 @media (min-width: 768px) {
-  table th td:first-child, table tr td:first-child {
+  .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
+  .table-touch-free th td:first-child,
+  .table-touch-free tr td:first-child {
     max-width: 200px; }
   /* Add the title for the Best Deal Column */
   .best-deal {
@@ -121,34 +127,32 @@ table.table-self-service {
     position: absolute;
     top: -9999px;
     left: -9999px; }
-  tr {
-    margin: 0 0 1rem 0; }
-    tr:nth-child(odd) {
-      background: #ccc; }
-    tr td {
-      /* Behave  like a "row" */
-      border: none;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      padding-left: 50%; }
-      tr td:before {
-        position: absolute;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        top: 3px;
-        left: 12px;
-        text-align: left; }
-      tr td:after {
-        position: absolute;
-        top: 25px;
-        left: 12px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-weight: bold;
-        font-size: 0.75rem;
-        text-align: left; }
+  tr:nth-child(odd) {
+    background: #ccc; }
+  tr td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; }
+    tr td:before {
+      position: absolute;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      top: 3px;
+      left: 12px;
+      text-align: left; }
+    tr td:after {
+      position: absolute;
+      top: 25px;
+      left: 12px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 0.75rem;
+      text-align: left; }
   .table-soft-touch tr td:nth-of-type(1):before,
   .table-touch-free tr td:nth-of-type(1):before {
     content: ""; }

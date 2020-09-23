@@ -24,6 +24,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
         rel="stylesheet" />
+
     <!-- Buggy Car Wash - Base CSS -->
     <link href="assets/css/base.min.css" rel="stylesheet" />
 </head>
@@ -104,6 +105,13 @@
         <section class="carousel-container carousel-section pb-sm-5">
             <div class="container-fluid p-0">
                 <div id="carouselMain" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselMain" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselMain" data-slide-to="1"></li>
+                        <li data-target="#carouselMain" data-slide-to="2"></li>
+                        <li data-target="#carouselMain" data-slide-to="3"></li>
+                        <li data-target="#carouselMain" data-slide-to="4"></li>
+                    </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block img w-100" src="./assets/images/slideshow/buggy-slide-1.jpg"
@@ -223,21 +231,23 @@
         <section class="services-section primary-gradient">
             <div class="container">
                 <div class="row m-0">
-                    <div id="mobileServicesCarousel" class="slide mt-5 mb-5" data-ride="carousel">
-                        <!-- <ol class="carousel-indicators d-md-none">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol> -->
-                        <div class="carousel-inner" role="listbox">
-                            <div id="softTouch" class=" active">
-                                <div class="col-12 jumbotron bg-white">
-                                    <h2>Soft Touch Car Wash</h2>
-                                    <p class="lead mb-5">
-                                        Come experience our new soft touch car wash. With features like the Top and Side
-                                        Blasters,
-                                        Tire Scrubber, Triplex Wheel Cleaner and Weather Guard Sealant, it is our most
-                                        advanced car
+                    <div id="accordion" class="mt-5 w-100" role="tablist">
+                        <div id="softTouch" class="card mb-4">
+                            <a data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                <div class="card-header" role="tab" id="headingOne">
+                                    <h2 class="mb-0">
+                                        Soft Touch Car Wash
+                                    </h2>
+                                </div>
+                            </a>
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-body">
+                                    <p class="lead mb-4">
+                                        Come experience our new soft touch car wash. With features like the Top
+                                        and Side Blasters, Tire Scrubber, Triplex Wheel Cleaner and Weather
+                                        Guard Sealant, it is
+                                        our most advanced car
                                         wash yet. Weather permitting, we are open 24 hours for your convenience.
                                     </p>
                                     <table role="table" class="table table-soft-touch table-striped" cellspacing="0"
@@ -263,7 +273,8 @@
                                         </thead>
                                         <tbody role="rowgroup">
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Top and Side Blasters</td>
+                                                <td class="font-weight-bold" role="cell">Top and Side Blasters
+                                                </td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell">
                                                     <i class="fas fa-check-circle"></i>
@@ -287,7 +298,8 @@
                                                 </td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Triplex Wheel Cleaner</td>
+                                                <td class="font-weight-bold" role="cell">Triplex Wheel Cleaner
+                                                </td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
                                                 </td>
@@ -321,7 +333,8 @@
                                                 </td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Triple Polish Protection</td>
+                                                <td class="font-weight-bold" role="cell">Triple Polish
+                                                    Protection</td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
                                                 </td>
@@ -331,7 +344,8 @@
                                                 <td class="text-center" role="cell">&nbsp;</td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Weather Guard Sealant</td>
+                                                <td class="font-weight-bold" role="cell">Weather Guard Sealant
+                                                </td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
                                                 </td>
@@ -367,13 +381,24 @@
                                     </table>
                                 </div>
                             </div>
-                            <div id="touchFree" class="">
-                                <div class="col-12 jumbotron mt-md-5 bg-white">
-                                    <h2>Touch-Free Professional Car Wash</h2>
-                                    <p class="lead mb-5">
-                                        Our Touch-Free Auto Wash. You don’t even have to get out of your car. Just drive
+                        </div>
+                        <div id="touchFree" class="card mb-4">
+                            <a data-toggle="collapse" href="#collapseTwo" aria-expanded="true"
+                                aria-controls="collapseTwo">
+                                <div class="card-header" role="tab" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        Touch-Free Professional Car
+                                    </h2>
+                                </div>
+                            </a>
+                            <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-body">
+                                    <p class="lead mb-4">
+                                        Our Touch-Free Auto Wash. You don’t even have to get out of your car.
+                                        Just drive
                                         through and
-                                        enjoy this powerful automated technology. Weather permitting, we are open 24
+                                        enjoy this powerful automated technology. Weather permitting, we are
+                                        open 24
                                         hours for your
                                         convenience.
                                     </p>
@@ -411,7 +436,8 @@
                                                 <td class="text-center" role="cell">&nbsp;</td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Rocker Panel and Wheel Super
+                                                <td class="font-weight-bold" role="cell">Rocker Panel and Wheel
+                                                    Super
                                                     Blaster</td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
@@ -422,7 +448,8 @@
                                                 <td class="text-center" role="cell">&nbsp;</td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Double Pass Hot Foaming Presoak
+                                                <td class="font-weight-bold" role="cell">Double Pass Hot Foaming
+                                                    Presoak
                                                 </td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
@@ -435,7 +462,8 @@
                                                 </td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">High Pressure Laser Wash</td>
+                                                <td class="font-weight-bold" role="cell">High Pressure Laser
+                                                    Wash</td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
                                                 </td>
@@ -447,7 +475,8 @@
                                                 </td>
                                             </tr>
                                             <tr role="row">
-                                                <td class="font-weight-bold" role="cell">Platinum Triple Foam</td>
+                                                <td class="font-weight-bold" role="cell">Platinum Triple Foam
+                                                </td>
                                                 <td class="text-center border border-warning border-top-0 border-bottom-0"
                                                     role="cell"><i class="fas fa-check-circle"></i>
                                                 </td>
@@ -493,43 +522,77 @@
                                     </table>
                                 </div>
                             </div>
-                            <div id="selfService" class="">
-                                <div class="col-12 jumbotron mt-md-5 bg-white">
-                                    <h2>Self-Service Bays</h2>
-                                    <p class="lead mb-5">
-                                        Our Touch-Free Auto Wash. You don’t even have to get out of your car. Just drive
+                        </div>
+                        <div id="selfService" class="card mb-5">
+                            <a data-toggle="collapse" href="#collapseThree" aria-expanded="true"
+                                aria-controls="collapseThree">
+                                <div class="card-header" role="tab" id="headingThree">
+                                    <h2 class="mb-0">
+                                        Self-Service Bays
+                                    </h2>
+                                </div>
+                            </a>
+                            <div id="collapseThree" class="collapse show" role="tabpanel"
+                                aria-labelledby="headingThree">
+                                <div class="card-body">
+                                    <p class="lead mb-3 mb-lg-4">
+                                        Our Touch-Free Auto Wash. You don’t even have to get out of your car. Just
+                                        drive
                                         through and
                                         enjoy this powerful automated technology. Weather permitting, we are open 24
                                         hours for your
                                         convenience.
                                     </p>
-                                    <div class="d-flex">
-                                        <div class="flex-fill pr-4">
-                                            <div class="display-1">$3.25</div>
-                                            <div class="display-4 text-uppercase">For 5 minutes</div>
+                                    <div class="d-lg-flex">
+                                        <div class="flex-fill pr-sm-2 pr-md-4 mb-4 mb-lg-2 mt-0">
+                                            <div class="line-height-default display-1 text-left">$3.25</div>
+                                            <div class="line-height-default display-4 text-left text-uppercase">For 5
+                                                minutes</div>
                                         </div>
                                         <table role="table" class="table table-self-service table-striped flex-fill">
                                             <tbody role="rowgroup">
                                                 <tr role="row">
-                                                    <td class="text-center" role="cell"><i
-                                                            class="fas fa-check-circle"></i>
+                                                    <td role="cell">
+                                                        <div class="d-flex flex-wrap align-content-center"><i
+                                                                class="fas fa-check-circle pl-2 pl-lg-4 mr-3"></i>
+                                                            bug off
+                                                        </div>
                                                     </td>
-                                                    <td class="text-center" role="cell"><i
-                                                            class="fas fa-check-circle"></i>
+                                                    <td role="cell">
+                                                        <div class="d-flex flex-wrap align-content-center"><i
+                                                                class="fas fa-check-circle pl-2 pl-lg-4 mr-3"></i>
+                                                            tire
+                                                            cleaner
+                                                        </div>
                                                     </td>
-                                                    <td class="text-center" role="cell"><i
-                                                            class="fas fa-check-circle"></i>
+                                                    <td role="cell">
+                                                        <div class="d-flex flex-wrap align-content-center"><i
+                                                                class="fas fa-check-circle pl-2 pl-lg-4 mr-3"></i>
+                                                            engine
+                                                            cleaner
+                                                        </div>
                                                     </td>
                                                 </tr>
                                                 <tr role="row">
-                                                    <td class="text-center" role="cell"><i
-                                                            class="fas fa-check-circle"></i>
+                                                    <td role="cell">
+                                                        <div class="d-flex flex-wrap align-content-center"><i
+                                                                class="fas fa-check-circle pl-2 pl-lg-4 mr-3"></i>
+                                                            high pressure soap
+                                                        </div>
                                                     </td>
-                                                    <td class="text-center" role="cell"><i
-                                                            class="fas fa-check-circle"></i>
+                                                    <td role="cell">
+                                                        <div class="d-flex flex-wrap align-content-center"><i
+                                                                class="fas fa-check-circle pl-2 pl-lg-4 mr-3"></i>
+                                                            triple foam
+                                                            conditioner
+                                                        </div>
                                                     </td>
-                                                    <td class="text-center" role="cell"><i
-                                                            class="fas fa-check-circle"></i>
+                                                    <td role="cell">
+                                                        <div class="d-flex flex-wrap align-content-center"><i
+                                                                class="fas fa-check-circle pl-2 pl-lg-4 mr-3"></i>
+                                                            clear coat
+                                                            protectant
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -537,19 +600,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="d-flex d-md-none carousel-control-prev" href="#mobileServicesCarousel"
-                                role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="d-flex d-md-none carousel-control-next" href="#mobileServicesCarousel"
-                                role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- Instagram Section -->
@@ -643,49 +697,80 @@
 
         <!-- Contact with Map Section -->
         <section class="contact-section">
-            <form method="post">
-                <div class="container pb-5">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="contact-image">
-                                <img class="p-4" src="./assets/images/icons/bubbles.gif" alt="Buggy Bubbles" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>Get in Touch!</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 mb-4">
-                            <div class="form-group">
-                                <input type="text" name="txtName" class="form-control" placeholder="Your Name *"
-                                    value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *"
-                                    value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="txtPhone" class="form-control"
-                                    placeholder="Your Phone Number *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <textarea name="txtMsg" class="form-control" placeholder="Your Message *"
-                                    style="width: 100%; height: 150px"></textarea>
-                            </div>
-                            <div class="form-group d-flex justify-content-end">
-                                <input type="submit" name="Submit" class="btn btn-primary" value="Send Message" />
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <iframe src="https://snazzymaps.com/embed/262607" width="100%" height="367px"
-                                style="border:none;"></iframe>
+            <div class="container pb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contact-image">
+                            <img class="p-4" src="./assets/images/icons/bubbles.gif" alt="Buggy Bubbles" />
                         </div>
                     </div>
                 </div>
-            </form>
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Get in Touch!</h2>
+                    </div>
+                </div>
+                <form id="contact-form" method="post" action="./vendor/php/contact.php" role="form">
+                    <div class="messages"></div>
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Firstname *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control"
+                                        placeholder="Please enter your firstname *" required="required"
+                                        data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Lastname *</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control"
+                                        placeholder="Please enter your lastname *" required="required"
+                                        data-error="Lastname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control"
+                                        placeholder="Please enter your email *" required="required"
+                                        data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_phone">Phone</label>
+                                    <input id="form_phone" type="tel" name="phone" class="form-control"
+                                        placeholder="Please enter your phone">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message *</label>
+                                    <textarea id="form_message" name="message" class="form-control"
+                                        placeholder="Message for me *" rows="4" required="required"
+                                        data-error="Please,leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-send" value="Send message">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            </div>
         </section>
     </main>
 
@@ -767,12 +852,25 @@
     <!-- Return to Top -->
     <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/base.min.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
+        integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAXfdHD7woe1nWvLpm2AOTEneW9My4cR4&callback=initMap"
         type="text/javascript"></script>
+
+    <!-- Buggy Car Wash - Base JS -->
+    <script src="assets/js/base.min.js"></script>
+
 </body>
 
 </html>
