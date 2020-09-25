@@ -317,6 +317,9 @@ main {
                 z-index: 2;
                 min-height: 194px;
                 border-radius: $border-radius;
+                .fa {
+                    color: $primary-color; 
+                }
             }
         }
     }

@@ -620,6 +620,8 @@ main {
     z-index: 2;
     min-height: 194px;
     border-radius: 15px; }
+    main .testimonials-section #testimonialCarousel .carousel-inner .fa {
+      color: #1E5B8F; }
   main .contact-section {
     background: #fff;
     z-index: 2; }
