@@ -712,7 +712,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <form action="contact.php" method="post" id="contact-form">
+                        <form action="pages/thanks.php" method="post" id="contact-form">
                             <div class="form-group">
                                 <label for="inputName">Name</label>
                                 <input type="text" class="form-control" id="inputName" name="name"
@@ -724,22 +724,21 @@
                                     placeholder="Enter Email" required>
                             </div>
                             <div class="form-group">
+                                <label for="inputSubject">Subject</label>
+                                <input type="text" class="form-control" id="inputSubject" ​ name="subject"
+                                    placeholder="Enter Subject" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputMessage">Message</label>
-                                <textarea class="form-control" id="inputMessage" name="message" rows="5"
+                                <textarea class="form-control" id="inputMessage" name="body" rows="5"
                                     placeholder="Enter Message..." required></textarea>
                             </div>
-
                             <div class="form-group">
                                 <button type="submit" name="submit" class="btn btn-primary"><i
                                         class="fa fa-paper-plane"></i>
                                     Send</button>
                             </div>
-                            <!-- 
-                            <div class="form-group">
-                                <label for="inputSubject">Subject</label>
-                                <input type="text" class="form-control" id="inputSubject" ​ name="subject"
-                                    placeholder="Enter Subject" required>
-                           -->
+                        </form>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <iframe src="https://snazzymaps.com/embed/262607" width="100%" height="367px"
@@ -766,7 +765,7 @@
                     </p>
                     <p class="text-white d-flex justify-content-start">
                         <span class="bg-white circle-icon rounded-circle mr-3">
-                            <i class="fa fas fa-map-marker-alt mt-n3"></i></span>
+                            <i class="fa fas fa-map-marker-alt"></i></span>
                         <span class="mt-n1">
                             51 Middletown Ave,<br> North Haven, CT<br> 06473
                         </span>
@@ -839,7 +838,7 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAXfdHD7woe1nWvLpm2AOTEneW9My4cR4&callback=initMap"
         type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
 
     <!-- Buggy Car Wash - Base JS -->
     <script src="assets/js/base.min.js"></script>

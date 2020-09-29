@@ -133,8 +133,11 @@ body {
     display: inline-block;
     width: 23px;
     height: 23px;
-    line-height: 23px;
+    line-height: 1;
     text-align: center;
+}
+.fa {
+    line-height: 23px; // set line-height of font awesome icons within circles
 }
 .fa.fas { // phone and address icons
     font-size: 0.9rem;

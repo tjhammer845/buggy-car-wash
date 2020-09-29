@@ -504,8 +504,11 @@ body a:active, body a:hover {
   display: inline-block;
   width: 23px;
   height: 23px;
-  line-height: 23px;
+  line-height: 1;
   text-align: center; }
+
+.fa {
+  line-height: 23px; }
 
 .fa.fas {
   font-size: 0.9rem;
