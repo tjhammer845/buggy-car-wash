@@ -22,9 +22,9 @@ html {
 body {
 
     // Typography
-    h1, h2, h3 {
+    h1, h2 {
         font: $header-font;
-        color: $black;
+        color: $primary-color;
     }
     h1 {
         font-size: 2.5rem;
@@ -98,6 +98,15 @@ body {
 }
 .line-height-default {
     line-height: 1;
+}
+
+// Form Validation Styles 
+.validation-error {
+    color: $red;
+    text-align: right;
+    font-size: .75rem;
+    font-weight: bold;
+    padding-left: 10px;
 }
 
 // Special Classes
@@ -227,6 +236,9 @@ header {
         // Site Logo - Linked to Homepage
         .navbar-brand {
             z-index: 4;
+            @include tablet-and-below {
+                width: calc(100% - 72px);
+            }
             .logo-lg {
                 display: none;
                 @include desktop-sm-and-up {
@@ -295,9 +307,6 @@ main {
         #accordion {
             .card {
                 a {
-                    h2 {
-                        color: $primary-color;
-                    }
                     &:hover {
                         .card-header {
                             background: $primary-color;
@@ -318,7 +327,7 @@ main {
             .carousel-inner  {
                 background: $quinary-color;
                 z-index: 2;
-                min-height: 194px;
+                min-height:240px;
                 border-radius: $border-radius;
                 .fa {
                     color: $primary-color; 
@@ -331,6 +340,15 @@ main {
     .contact-section {
         background: $white;
         z-index: 2;
+        .active {
+            background: $green!important;
+            &:before {
+                font-family: inherit!important;
+                content: "Sending..."!important;
+                padding-left: 30px;
+                background: url("../images/icons/ajax-loader.gif") top 6px left no-repeat;
+            }
+        }
         .contact-image{
             text-align: center;
             img {
@@ -339,6 +357,22 @@ main {
                 width: 130px;
                 margin-top: -6%;
 
+            }
+        }
+
+        // Contact Form
+        #contactForm {
+            #submitButton {
+                font-size: 1rem;
+                font-weight: bold;
+                &:before {
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font-family: "Font Awesome 5 Free", $primary-font-stack;
+                    content: "\f1d8 \00a0 \00a0 Send";
+                }
             }
         }
     }

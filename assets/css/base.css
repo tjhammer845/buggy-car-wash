@@ -395,9 +395,9 @@ main {
 html {
   font-size: 16px; }
 
-body h1, body h2, body h3 {
+body h1, body h2 {
   font: bold 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
-  color: #000; }
+  color: #1E5B8F; }
 
 body h1 {
   font-size: 2.5rem;
@@ -463,6 +463,13 @@ body a:active, body a:hover {
 
 .line-height-default {
   line-height: 1; }
+
+.validation-error {
+  color: #ED2324;
+  text-align: right;
+  font-size: .75rem;
+  font-weight: bold;
+  padding-left: 10px; }
 
 .primary-gradient {
   background: #B5E1F2;
@@ -579,6 +586,9 @@ header {
     min-height: 110px; }
     header #mainNav .navbar-brand {
       z-index: 4; }
+      @media (max-width: 991px) {
+        header #mainNav .navbar-brand {
+          width: calc(100% - 72px); } }
       header #mainNav .navbar-brand .logo-lg {
         display: none; }
         @media (min-width: 992px) {
@@ -611,8 +621,6 @@ main {
     font-size: 1.125rem; }
   main .welcome-section .card-deck .card img {
     max-height: 70px; }
-  main .services-section #accordion .card a h2 {
-    color: #1E5B8F; }
   main .services-section #accordion .card a:hover .card-header {
     background: #1E5B8F;
     border-radius: calc(.25rem - 1px); }
@@ -621,13 +629,20 @@ main {
   main .testimonials-section #testimonialCarousel .carousel-inner {
     background: #D4EBF5;
     z-index: 2;
-    min-height: 194px;
+    min-height: 240px;
     border-radius: 15px; }
     main .testimonials-section #testimonialCarousel .carousel-inner .fa {
       color: #1E5B8F; }
   main .contact-section {
     background: #fff;
     z-index: 2; }
+    main .contact-section .active {
+      background: #17B25F !important; }
+      main .contact-section .active:before {
+        font-family: inherit !important;
+        content: "Sending..." !important;
+        padding-left: 30px;
+        background: url("../images/icons/ajax-loader.gif") top 6px left no-repeat; }
     main .contact-section .contact-image {
       text-align: center; }
       main .contact-section .contact-image img {
@@ -635,6 +650,16 @@ main {
         border-radius: 6rem;
         width: 130px;
         margin-top: -6%; }
+    main .contact-section #contactForm #submitButton {
+      font-size: 1rem;
+      font-weight: bold; }
+      main .contact-section #contactForm #submitButton:before {
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free", "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+        content: "\f1d8 \00a0 \00a0 Send"; }
 
 #parallaxFooter {
   background: #0084B5;

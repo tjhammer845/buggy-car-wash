@@ -1,0 +1,89 @@
+/*************************************************/
+/*** BUGGY CAR WASH - SUBMIT BUTTON STYLESHEET ***/
+/*************************************************/
+/* Color Sceme - Refer to Variables.scss */
+.hide {
+  display: none; }
+
+.contact-section .button-submit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 12.5rem;
+  margin: 0;
+  padding: 1.5rem 3.125rem;
+  background-color: #0084B5;
+  border: none;
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  overflow: hidden; }
+  .contact-section .button-submit:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #1ddf77; }
+  .contact-section .button-submit span {
+    position: absolute;
+    line-height: 0; }
+    .contact-section .button-submit span i {
+      transform-origin: center center; }
+    .contact-section .button-submit span:nth-of-type(1) {
+      top: 50%;
+      transform: translateY(-50%); }
+    .contact-section .button-submit span:nth-of-type(2) {
+      top: 100%;
+      transform: translateY(0%);
+      font-size: 24px; }
+    .contact-section .button-submit span:nth-of-type(3) {
+      display: none; }
+
+.contact-section .active {
+  background-color: #17B25F; }
+  .contact-section .active:before {
+    width: 100%;
+    transition: width 3s linear; }
+  .contact-section .active span:nth-of-type(1) {
+    top: -100%;
+    transform: translateY(-50%); }
+  .contact-section .active span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%); }
+    .contact-section .active span:nth-of-type(2) i {
+      animation: loading 500ms linear infinite; }
+  .contact-section .active span:nth-of-type(3) {
+    display: none; }
+
+.contact-section .finished {
+  background-color: #1ddf77; }
+  .contact-section .finished .submit {
+    display: none; }
+  .contact-section .finished .loading {
+    display: none; }
+  .contact-section .finished .check {
+    display: block !important;
+    font-size: 24px;
+    animation: scale 0.5s linear; }
+    .contact-section .finished .check i {
+      transform-origin: center center; }
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes scale {
+  0% {
+    transform: scale(10); }
+  50% {
+    transform: scale(0.2); }
+  70% {
+    transform: scale(1.2); }
+  90% {
+    transform: scale(0.7); }
+  100% {
+    transform: scale(1); } }

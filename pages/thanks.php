@@ -29,19 +29,18 @@ $mail->Body=$txt;
 
 if (!$mail->send()) {
     $mailConfirmation = "Please try again later, an error occured while processing your message..." . $mail->ErrorInfo;
-    return $mailConfirmation; 
+    return $mailConfirmation;
 } else {
-    $mailConfirmation = "Your email has been sent. We will get back to you shortly.";  
+    $mailConfirmation = "Your email has been sent. We will get back to you shortly.";
 }
 ?>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon" />
 
         <title>
             Buggy Car Wash and Barking Bath | 51 Middletown Ave, North Haven, CT -
@@ -71,7 +70,7 @@ if (!$mail->send()) {
             <section id="topBar" class="d-flex text-white align-items-center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-between justify-content-sm-end">
+                        <div class="col-12 d-flex justify-content-between justify-content-md-end">
                             <span class="open-hours text-uppercase font-weight-bold d-none d-md-inline-block mr-2 mr-sm-4">
                                 Open 24 Hours!</span>
                             <span class="mr-2 mr-sm-4">
@@ -117,15 +116,15 @@ if (!$mail->send()) {
                                 </a>
                             </li>
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link hvr-icon-pop" title="Dog Wash" href="#"><span class="hvr-icon">Dog
+                                <a class="nav-link hvr-icon-pop" title="Dog Wash" href="../pages/dogwash.html"><span class="hvr-icon">Dog
                                         Wash</span></a>
                             </li>
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link hvr-icon-pop" title="Gift Cards" href="#"><span class="hvr-icon">Gift
+                                <a class="nav-link hvr-icon-pop" title="Gift Cards" href="../pages/giftcards.html"><span class="hvr-icon">Gift
                                         Cards</span></a>
                             </li>
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link hvr-icon-pop" title="About Us" href="#"><span class="hvr-icon">About
+                                <a class="nav-link hvr-icon-pop" title="About Us" href="../pages/aboutus.html"><span class="hvr-icon">About
                                         Us</span></a>
                             </li>
                         </ul>
@@ -136,7 +135,7 @@ if (!$mail->send()) {
 
         <!-- Main -->
         <main class="content w-100">
-            <section class="carousel-container carousel-section pb-sm-5">
+            <section class="carousel-container carousel-section pb-2 pb-sm-5">
                 <div class="container-fluid p-0">
                     <div id="carouselMain" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -184,10 +183,10 @@ if (!$mail->send()) {
             <!-- Welcome Section -->
             <section class="welcome-section">
                 <div class="container">
-                    <div class="row mb-4">
+                    <div class="row mt-lg-5 mb-4">
                         <div class="col-12">
-                            <h1 class="mt-5">Thank you for contacting us!</h1>
-                            <p class="lead">
+                            <h1 class="text-left text-md-center mt-5">Thank you for contacting us!</h1>
+                            <p class="text-left text-md-center lead">
                                 <?php echo $mailConfirmation; ?>
                             </p>
                         </div>
@@ -206,14 +205,14 @@ if (!$mail->send()) {
                         <h6 class=" text-uppercase text-white font-weight-bold">
                             Open 24 Hours!</h6>
                         <p class="text-white d-flex align-items-center">
-                            <span class="bg-white circle-icon rounded-circle mr-3"><i
+                            <span class="bg-white circle-icon rounded-circle mt-1 mr-3"><i
                                     class="fa fas fa-phone-alt"></i></span>
                             203-495-9945
                         </p>
                         <p class="text-white d-flex justify-content-start">
                             <span class="bg-white circle-icon rounded-circle mr-3">
                                 <i class="fa fas fa-map-marker-alt"></i></span>
-                            <span class="mt-n1">
+                            <span>
                                 51 Middletown Ave,<br> North Haven, CT<br> 06473
                             </span>
                         </p>
@@ -223,15 +222,15 @@ if (!$mail->send()) {
                             Explore our Site!</h6>
                         <nav class="nav d-block w-100">
                             <a class="nav-link display-4 text-left d-md-block hvr-pop pl-0 text-white active"
-                                title="Car Wash" href="#">Car
+                                title="Car Wash" href="/">Car
                                 Wash</a>
                             <a class="nav-link display-4 text-left d-md-block hvr-pop pl-md-0 text-white" title="Dog Wash"
-                                href="#">Dog Wash</a>
+                                href="../pages/dogwash.html">Dog Wash</a>
                             <a class="nav-link display-4 text-left d-md-block hvr-pop pl-md-0 text-white" title="Gift Cards"
-                                href="#">Gift
+                                href="../pages/giftcards.html">Gift
                                 Cards</a>
                             <a class="nav-link display-4 text-left d-md-block hvr-pop pl-md-0 text-white" title="About Us"
-                                href="#">About Us</a>
+                                href="../pages/aboutus.html">About Us</a>
                         </nav>
                     </div>
                     <div class="copyright-container col-md-4 col-lg-4 col-xl-3 mb-4 ml-md-auto">
@@ -274,14 +273,9 @@ if (!$mail->send()) {
         <!-- Return to Top -->
         <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
         <!-- Buggy Car Wash - Base JS -->
         <script src="../assets/js/base.min.js"></script>

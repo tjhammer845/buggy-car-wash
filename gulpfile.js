@@ -2,7 +2,7 @@ var gulp = require("gulp"),
     rimraf = require("rimraf"),
     concat = require("gulp-concat-util"),
     cssmin = require("gulp-cssmin"),
-    uglify = require("gulp-uglify"),
+    uglify = require('gulp-uglify-es').default,
     sass = require("gulp-sass"),
     runSequence = require("run-sequence");
 
