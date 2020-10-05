@@ -4,10 +4,7 @@
 main {
   min-height: 100%;
   min-height: 100vh;
-  position: relative;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0; }
+  position: relative; }
 
 #parallaxFooter {
   position: fixed;

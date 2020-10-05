@@ -274,6 +274,13 @@ table {
 table.table-self-service .fa-check-circle {
   font-size: 24px; }
 
+@media (min-width: 992px) {
+  table.table-barking-bath {
+    width: calc(100% - 185px); } }
+
+table.table-barking-bath .fa-check-circle {
+  font-size: 24px; }
+
 @media (min-width: 768px) {
   .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
   .table-touch-free th td:first-child,
@@ -364,23 +371,6 @@ table.table-self-service .fa-check-circle {
     content: "$10"; }
   .table-touch-free tr td:nth-of-type(5):after {
     content: "$8"; } }
-
-/**************************************************/
-/*** BUGGY CAR WASH - PARALLAX FOOTER STYLESHET ***/
-/**************************************************/
-main {
-  min-height: 100%;
-  min-height: 100vh;
-  position: relative;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0; }
-
-#parallaxFooter {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0; }
 
 /****************************************/
 /*** BUGGY CAR WASH - BASE STYLESHEET ***/
@@ -484,9 +474,9 @@ body a:active, body a:hover {
   /* IE6-9 */ }
 
 .drop-shadow {
-  -webkit-box-shadow: 0px 5px 8px 1px rgba(0, 0, 0, 0.42);
-  -moz-box-shadow: 0px 5px 8px 1px rgba(0, 0, 0, 0.42);
-  box-shadow: 0px 5px 8px 1px rgba(0, 0, 0, 0.42); }
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 15px 0; }
 
 .delay {
   -webkit-animation: all .5s;
@@ -608,6 +598,9 @@ header {
       border: solid 1px #fff; }
 
 main {
+  min-height: 100%;
+  min-height: 100vh;
+  position: relative;
   background: #D4EBF5; }
   main .carousel-container {
     background: #97D0E7;
@@ -619,20 +612,34 @@ main {
       margin-bottom: 15px; } }
   main .welcome-section .card-deck .card .card-text {
     font-size: 1.125rem; }
-  main .welcome-section .card-deck .card img {
+  main .welcome-section .card-deck .card img.hp-img {
     max-height: 70px; }
   main .services-section #accordion .card a:hover .card-header {
     background: #1E5B8F;
     border-radius: calc(.25rem - 1px); }
     main .services-section #accordion .card a:hover .card-header h2 {
       color: #fff; }
-  main .testimonials-section #testimonialCarousel .carousel-inner {
-    background: #D4EBF5;
-    z-index: 2;
-    min-height: 240px;
-    border-radius: 15px; }
-    main .testimonials-section #testimonialCarousel .carousel-inner .fa {
-      color: #1E5B8F; }
+  main .services-section .dog-tip-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; }
+    main .services-section .dog-tip-header:before, main .services-section .dog-tip-header:after {
+      content: '';
+      border-top: 2px solid #fff;
+      margin: 5px 20px 0 0;
+      flex: 1 0 20px; }
+    main .services-section .dog-tip-header:after {
+      margin: 5px 0 0 20px; }
+  main .services-section .dog-tip {
+    border-radius: 50%;
+    height: 278px;
+    width: 278px; }
+    main .services-section .dog-tip p {
+      font-size: 1rem;
+      line-height: 1.4; }
   main .contact-section {
     background: #fff;
     z-index: 2; }
@@ -660,9 +667,23 @@ main {
         -webkit-font-smoothing: antialiased;
         font-family: "Font Awesome 5 Free", "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
         content: "\f1d8 \00a0 \00a0 Send"; }
+  main .testimonials-section {
+    background: #0084B5; }
+    main .testimonials-section #testimonialCarousel .carousel-inner {
+      background: #0084B5;
+      z-index: 2;
+      min-height: 200px;
+      border-radius: 15px; }
+      main .testimonials-section #testimonialCarousel .carousel-inner .fa {
+        color: #1E5B8F; }
 
 #parallaxFooter {
-  background: #0084B5;
+  border-top: solid 5px #0084B5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1E5B8F;
   z-index: -1; }
   #parallaxFooter .footer-container {
     z-index: 3; }
@@ -670,7 +691,7 @@ main {
       font-size: 1rem;
       line-height: 1.4; }
       #parallaxFooter .footer-container p .fa {
-        color: #0084B5; }
+        color: #1E5B8F; }
       @media (max-width: 1219px) {
         #parallaxFooter .footer-container p {
           font-size: 0.938rem; } }

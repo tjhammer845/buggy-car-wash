@@ -29,6 +29,14 @@ table.table-self-service {
         font-size: 24px;
     }
 }
+table.table-barking-bath {
+    @include desktop-sm-and-up  {
+        width: calc(100% - 185px);
+    }
+    .fa-check-circle {
+        font-size: 24px;
+    }
+}
 
 @include tablet-and-up {
     .table-soft-touch,

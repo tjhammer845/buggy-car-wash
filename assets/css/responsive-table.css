@@ -98,6 +98,13 @@ table {
 table.table-self-service .fa-check-circle {
   font-size: 24px; }
 
+@media (min-width: 992px) {
+  table.table-barking-bath {
+    width: calc(100% - 185px); } }
+
+table.table-barking-bath .fa-check-circle {
+  font-size: 24px; }
+
 @media (min-width: 768px) {
   .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
   .table-touch-free th td:first-child,

@@ -1,7 +1,6 @@
 /* Imported Styles */
 @import "bubbles.scss"; // pure CSS animated bubbles styles
 @import "responsive-table.scss"; // responsive tables including site variables and mixins
-@import "parallax-footer.scss"; // parallax footer (and main) styles
 
 
 /****************************************/
@@ -118,9 +117,9 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-light-blue', endColorstr='$gradient-dark-blue',GradientType=0 ); /* IE6-9 */
 }
 .drop-shadow {
-    -webkit-box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.42);
-    -moz-box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.42);
-    box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.42);
+	-webkit-box-shadow: rgba(0,0,0,0.3) 0 2px 15px 0;
+	-moz-box-shadow: rgba(0,0,0,0.3) 0 2px 15px 0;
+	box-shadow: rgba(0,0,0,0.3) 0 2px 15px 0;
 }
 .delay {
     -webkit-animation: all .5s;
@@ -274,6 +273,9 @@ header {
 
 // Main Content
 main {
+    min-height: 100%;
+	min-height: 100vh;
+	position: relative;
     background: $quinary-color;
 
     // Carousel Section
@@ -295,7 +297,7 @@ main {
                 .card-text {
                     font-size: 1.125rem;
                 }
-                img {
+                img.hp-img {
                     max-height: 70px;
                 }
             }
@@ -319,19 +321,31 @@ main {
                 }
             }
         }
-    }
-
-    // Testimonials Section
-    .testimonials-section {
-        #testimonialCarousel {
-            .carousel-inner  {
-                background: $quinary-color;
-                z-index: 2;
-                min-height:240px;
-                border-radius: $border-radius;
-                .fa {
-                    color: $primary-color; 
-                }
+        .dog-tip-header {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: $white;
+            &:before,
+            &:after {
+                content: '';
+                border-top: 2px solid $white;
+                margin: 5px 20px 0 0;
+                flex: 1 0 20px;
+            }
+            &:after {
+                margin: 5px 0 0 20px;
+            }
+        }
+        .dog-tip {
+            border-radius: 50%;
+            height: 278px;
+            width: 278px;
+            p {
+                font-size: 1rem;
+                line-height: 1.4;
             }
         }
     }
@@ -376,26 +390,52 @@ main {
             }
         }
     }
-}
 
-// Footer
-#parallaxFooter {
-    background: $secondary-color;
-    z-index: -1;
-    .footer-container {
-        z-index: 3;
-        p {
-            font-size: 1rem;
-            line-height: 1.4;
-            .fa { // font awesome icons
-                color: $secondary-color;
+    // Testimonials Section
+    .testimonials-section {
+        background: $secondary-color;
+        #testimonialCarousel {
+            .carousel-inner  {
+                background: $secondary-color;
+                z-index: 2;
+                min-height:200px;
+                border-radius: $border-radius;
+                .fa {
+                    color: $primary-color; 
+                }
             }
-            @include desktop-md-and-below {
-                font-size: 0.938rem;
-            }
-        }
-        .copyright-container {
-            max-width: 270px;
         }
     }
 }
+
+
+    // Instagram Section
+    .ig-section {
+    }
+
+    // Footer
+    #parallaxFooter {
+        border-top: solid 5px $secondary-color;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primary-color;
+        z-index: -1;
+        .footer-container {
+            z-index: 3;
+            p {
+                font-size: 1rem;
+                line-height: 1.4;
+                .fa { // font awesome icons
+                    color: $primary-color;
+                }
+                @include desktop-md-and-below {
+                    font-size: 0.938rem;
+                }
+            }
+            .copyright-container {
+                max-width: 270px;
+            }
+        }
+    }
