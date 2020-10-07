@@ -282,6 +282,8 @@ table.table-barking-bath .fa-check-circle {
   font-size: 24px; }
 
 @media (min-width: 768px) {
+  table td {
+    border-left: solid 3px #fff; }
   .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
   .table-touch-free th td:first-child,
   .table-touch-free tr td:first-child {
@@ -299,9 +301,10 @@ table.table-barking-bath .fa-check-circle {
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* Remove Best Deal border in Mobile */
-  .border-warning {
-    border: none !important; }
+  table {
+    /* Remove Best Deal border in Mobile */ }
+    table .border-warning {
+      border: none !important; }
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr {
     display: block; }
@@ -385,37 +388,36 @@ table.table-barking-bath .fa-check-circle {
 html {
   font-size: 16px; }
 
-body h1, body h2 {
-  font: bold 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
-  color: #1E5B8F; }
-
-body h1 {
-  font-size: 2.5rem;
-  line-height: 3.125rem; }
-
-body h2 {
-  font-size: 2.25rem;
-  line-height: 2.875rem; }
-
-body h3 {
-  font-size: 1.5rem;
-  line-height: 2rem; }
-
-body p {
-  font: 500 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 1.375rem;
-  line-height: 1.875rem;
-  color: #000; }
-  body p.lead {
-    font-weight: 600; }
-
-body a, body a:active, body a:hover, body a:visited {
-  color: #1E5B8F;
-  text-decoration: none; }
-
-body a:active, body a:hover {
-  color: #0084B5;
-  text-decoration: none; }
+body {
+  font-family: "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif; }
+  body h1, body h2 {
+    font: bold 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+    color: #1E5B8F; }
+  body h1 {
+    font-size: 2.5rem;
+    line-height: 3.125rem; }
+  body h2 {
+    font-size: 2.25rem;
+    line-height: 2.875rem; }
+  body h3 {
+    font: bold 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem; }
+  body p {
+    font: 500 16px "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    color: #000;
+    font-weight: 500; }
+  body a, body a:active, body a:hover, body a:visited {
+    color: #1E5B8F;
+    text-decoration: none; }
+  body a:active, body a:hover {
+    color: #0084B5;
+    text-decoration: none; }
+  @media (max-width: 767px) {
+    body .mobile-link {
+      font-size: 1.5rem !important; } }
 
 /* CUSTOM STYLES */
 .container, .container-fluid {
@@ -427,7 +429,7 @@ body a:active, body a:hover {
   @media (min-width: 992px) {
     .container {
       width: 1220px; } }
-  @media (max-width: 991px) {
+  @media (max-width: 1023px) {
     .container {
       width: 100%;
       max-width: 100%;
@@ -493,9 +495,23 @@ body a:active, body a:hover {
   /* The drop-opacity class is added to the main nav to add transparency to its background */
   background: rgba(0, 132, 181, 0.9) !important; }
 
+.border-radius {
+  border-radius: 15px;
+  overflow: hidden; }
+
 .sticky + .content {
   /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
   padding-top: 152px; }
+
+.w-49 {
+  width: 49% !important; }
+
+@media (min-width: 768px) {
+  .w-md-100 {
+    width: 100% !important; } }
+
+.border-warning {
+  border-width: 3px !important; }
 
 .circle-icon {
   display: inline-block;
@@ -504,12 +520,25 @@ body a:active, body a:hover {
   line-height: 1;
   text-align: center; }
 
+@media (max-width: 767px) {
+  .circle-link {
+    width: 40px;
+    height: 40px; } }
+
 .fa {
   line-height: 23px; }
 
 .fa.fas {
   font-size: 0.9rem;
   margin: 0; }
+
+@media (max-width: 767px) {
+  .fa.fab {
+    font-size: 1.5rem;
+    line-height: 40px; } }
+
+.fa-camera-retro {
+  color: #17B25F; }
 
 .icon-link {
   background: #fff; }
@@ -520,6 +549,9 @@ body a:active, body a:hover {
 
 .fa-check-circle {
   color: #17B25F; }
+
+.phone-link a {
+  color: #fff !important; }
 
 #return-to-top {
   position: fixed;
@@ -576,49 +608,83 @@ header {
     min-height: 110px; }
     header #mainNav .navbar-brand {
       z-index: 4; }
-      @media (max-width: 991px) {
+      @media (max-width: 1023px) {
         header #mainNav .navbar-brand {
           width: calc(100% - 72px); } }
       header #mainNav .navbar-brand .logo-lg {
-        display: none; }
-        @media (min-width: 992px) {
+        display: inline-block;
+        max-width: 300px; }
+        @media (max-width: 1023px) {
           header #mainNav .navbar-brand .logo-lg {
-            display: inline-block;
-            max-width: 300px; } }
+            display: none; } }
       header #mainNav .navbar-brand .logo-sm {
         display: none; }
-        @media (max-width: 991px) {
+        @media (max-width: 1023px) {
           header #mainNav .navbar-brand .logo-sm {
             display: inline-block; } }
     header #mainNav #navbarResponsive ul.navbar-nav li.nav-item a.nav-link {
       font-size: 1.25rem;
+      line-height: 1;
       font-weight: 700;
       text-transform: uppercase; }
     header #mainNav #navbarResponsive ul.navbar-nav li.nav-item.active {
       border: solid 1px #fff; }
 
 main {
-  min-height: 100%;
-  min-height: 100vh;
   position: relative;
   background: #D4EBF5; }
-  main .carousel-container {
+  @media (min-width: 768px) {
+    main {
+      min-height: 100%;
+      min-height: 100vh; } }
+  @media (max-width: 767px) {
+    main {
+      min-height: initial !important; } }
+  main .carousel-container, main .header-container {
     background: #97D0E7;
     z-index: 2; }
-  @media (max-width: 991px) {
+    main .carousel-container .carousel-control-next-icon, main .carousel-container .carousel-control-prev-icon, main .header-container .carousel-control-next-icon, main .header-container .carousel-control-prev-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(23, 178, 95, 0.95);
+      background-size: 30px; }
+  @media (max-width: 1023px) {
     main .welcome-section .card-deck .card {
       -ms-flex: unset;
       flex: unset;
       margin-bottom: 15px; } }
   main .welcome-section .card-deck .card .card-text {
-    font-size: 1.125rem; }
+    font-size: 1.125rem;
+    line-height: 1.2; }
   main .welcome-section .card-deck .card img.hp-img {
     max-height: 70px; }
+  main .services-section #accordion .card a h2:before {
+    font-family: FontAwesome;
+    color: #1E5B8F;
+    font-size: 1.6rem;
+    margin-right: 0.75rem; }
+  @media (max-width: 767px) {
+    main .services-section #accordion .card a h2 {
+      font-size: 1.5rem; }
+      main .services-section #accordion .card a h2 span {
+        display: none; } }
+  @media (max-width: 321px) {
+    main .services-section #accordion .card a h2 {
+      font-size: 1.2rem; }
+      main .services-section #accordion .card a h2:before {
+        font-size: 1.2rem;
+        margin-right: 0.5rem; } }
   main .services-section #accordion .card a:hover .card-header {
     background: #1E5B8F;
     border-radius: calc(.25rem - 1px); }
     main .services-section #accordion .card a:hover .card-header h2 {
       color: #fff; }
+      main .services-section #accordion .card a:hover .card-header h2:before {
+        color: #fff; }
+  main .services-section #accordion .card a[aria-expanded="true"] h2:before {
+    content: "\f078"; }
+  main .services-section #accordion .card a[aria-expanded="false"] h2:before {
+    content: "\f054"; }
   main .services-section .dog-tip-header {
     display: flex;
     width: 100%;
@@ -667,6 +733,8 @@ main {
         -webkit-font-smoothing: antialiased;
         font-family: "Font Awesome 5 Free", "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
         content: "\f1d8 \00a0 \00a0 Send"; }
+  main .ig-section {
+    background: #fff; }
   main .testimonials-section {
     background: #0084B5; }
     main .testimonials-section #testimonialCarousel .carousel-inner {
@@ -676,24 +744,46 @@ main {
       border-radius: 15px; }
       main .testimonials-section #testimonialCarousel .carousel-inner .fa {
         color: #1E5B8F; }
+      @media (max-width: 1023px) {
+        main .testimonials-section #testimonialCarousel .carousel-inner {
+          min-height: 220px; } }
+      @media (max-width: 767px) {
+        main .testimonials-section #testimonialCarousel .carousel-inner {
+          min-height: 280px; } }
+      @media (max-width: 599px) {
+        main .testimonials-section #testimonialCarousel .carousel-inner {
+          min-height: 360px; } }
 
-#parallaxFooter {
+#pageFooter {
   border-top: solid 5px #0084B5;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #1E5B8F;
-  z-index: -1; }
-  #parallaxFooter .footer-container {
+  background: #1E5B8F; }
+  @media (min-width: 768px) {
+    #pageFooter {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1; } }
+  @media (max-width: 767px) {
+    #pageFooter {
+      position: relative !important;
+      left: initial !important;
+      right: initial !important;
+      bottom: initial !important;
+      z-index: 0 !important; } }
+  #pageFooter .footer-container {
     z-index: 3; }
-    #parallaxFooter .footer-container p {
+    #pageFooter .footer-container p {
       font-size: 1rem;
       line-height: 1.4; }
-      #parallaxFooter .footer-container p .fa {
+      #pageFooter .footer-container p .fa {
         color: #1E5B8F; }
       @media (max-width: 1219px) {
-        #parallaxFooter .footer-container p {
+        #pageFooter .footer-container p {
           font-size: 0.938rem; } }
-    #parallaxFooter .footer-container .copyright-container {
+    #pageFooter .footer-container .copyright-container {
       max-width: 270px; }
+      @media (max-width: 767px) {
+        #pageFooter .footer-container .copyright-container {
+          max-width: 290px;
+          margin: 3rem auto; } }

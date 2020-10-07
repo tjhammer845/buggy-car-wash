@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require '../vendor/autoload.php';
 
-$to =  'tjhammer845@gmail.com';
+$to =  'buggycarwash1@gmail.com';
 $from =  $_POST['email'];
 $name =  $_POST['name'];
 $subject =  $_POST['subject'];
@@ -70,10 +70,10 @@ if (!$mail->send()) {
             <section id="topBar" class="d-flex text-white align-items-center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-between justify-content-md-end">
+                        <div class="col-12 d-flex align-items-center justify-content-between justify-content-sm-end">
                             <span class="open-hours text-uppercase font-weight-bold d-none d-md-inline-block mr-2 mr-sm-4">
                                 Open 24 Hours!</span>
-                            <span class="mr-2 mr-sm-4">
+                            <span class="phone-link mr-2 mr-sm-4">
                                 <span class="bg-white circle-icon rounded-circle mr-1"><i
                                         class="fa fas fa-phone-alt"></i></span>
                                 203-495-9945
@@ -83,10 +83,13 @@ if (!$mail->send()) {
                                     <i class="fa fas fa-map-marker-alt"></i></span>
                                 51 Middletown Ave, North Haven, CT
                             </span>
-                            <span>
-                                <a target="_blank" class="hvr-pop icon-link circle-icon rounded-circle mr-1 mr-sm-2" href="https://www.instagram.com/buggy_car_wash/"
-                                    title="Buggy Instagram Page"><i class="fa fab fa-instagram"></i></a>
-                                <a target="_blank" class="hvr-pop icon-link circle-icon rounded-circle" href="https://www.facebook.com/pages/category/Car-Wash/Buggy-Car-Wash-and-The-Barking-Bath-335929286476531/"
+                            <span class="pt-2 pb-2 pt-md-0 pb-md-0 ">
+                                <a target="_blank"
+                                    class="hvr-pop icon-link circle-icon circle-link rounded-circle mr-1 mr-sm-2"
+                                    href="https://www.instagram.com/buggy_car_wash/" title="Buggy Instagram Page"><i
+                                        class="fa fab fa-instagram"></i></a>
+                                <a target="_blank" class="hvr-pop icon-link circle-icon circle-link rounded-circle"
+                                    href="https://www.facebook.com/pages/category/Car-Wash/Buggy-Car-Wash-and-The-Barking-Bath-335929286476531/"
                                     title="Buggy Facebook Page"><i class="fa fab fa-facebook-f"></i></a>
                             </span>
                         </div>
@@ -111,20 +114,20 @@ if (!$mail->send()) {
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav pt-4 p-lg-0 ml-auto">
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link" title="Car Wash" href="/"><span class="hvr-icon">Car
+                                <a class="nav-link mobile-link" title="Car Wash" href="/"><span class="hvr-icon">Car
                                         Wash</span>
                                 </a>
                             </li>
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link" title="Dog Wash" href="../pages/dogwash.html"><span class="hvr-icon">Dog
+                                <a class="nav-link mobile-link" title="Dog Wash" href="../pages/dogwash.html"><span class="hvr-icon">Dog
                                         Wash</span></a>
                             </li>
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link" title="Gift Cards" href="../pages/giftcards.html"><span class="hvr-icon">Gift
+                                <a class="nav-link mobile-link" title="Gift Cards" href="../pages/giftcards.html"><span class="hvr-icon">Gift
                                         Cards</span></a>
                             </li>
                             <li class="nav-item pl-4 pr-4 p-lg-0 ml-lg-4">
-                                <a class="nav-link" title="About Us" href="../pages/aboutus.html"><span class="hvr-icon">About
+                                <a class="nav-link mobile-link" title="About Us" href="../pages/aboutus.html"><span class="hvr-icon">About
                                         Us</span></a>
                             </li>
                         </ul>
@@ -134,7 +137,7 @@ if (!$mail->send()) {
         </header>
 
         <!-- Main -->
-        <main class="content w-100">
+        <main class="content w-100 drop-shadow">
             <section class="carousel-container carousel-section pb-2 pb-sm-5">
                 <div class="container-fluid p-0">
                     <div id="carouselMain" class="carousel slide" data-ride="carousel">
@@ -169,11 +172,11 @@ if (!$mail->send()) {
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon rounded-circle" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
                         <a class="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon rounded-circle" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -183,192 +186,190 @@ if (!$mail->send()) {
             <!-- Welcome Section -->
             <section class="welcome-section">
                 <div class="container">
-                    <div class="row mt-lg-5 mb-4">
+                    <div class="row mt-lg-5 pb-5">
                         <div class="col-12">
-                            <h1 class="text-left text-md-center mt-5">Thank you for contacting us!</h1>
-                            <p class="text-left text-md-center lead">
+                            <h1 class="text-left text-md-center pt-5 pb-3">Thank you for contacting us!</h1>
+                            <p class="text-left text-md-center pb-5">
                                 <?php echo $mailConfirmation; ?>
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials-section">
+                <div class="container pt-5 pb-5">
+                    <div class="row">
+                        <div id="testimonialCarousel" class="carousel slide w-100 pb-3" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active text-center pl-4 pr-4 pt-4">
+                                    <blockquote class="blockquote text-center">
+                                        <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Fabulous work!
+                                            Looks like a
+                                            brand
+                                            new car. Will definitely use them again. Thanks again Mike! &nbsp; <i
+                                                class="fa fa-quote-right"></i>
+                                        </p>
+                                        <footer class="blockquote-footer text-white mb-3"><strong>George McTearney</strong>
+                                            <cite title="Car">(Mercedes CLS 550)</cite></footer>
+                                        <!-- Client review stars -->
+                                        <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                        <p class="client-review-stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </p>
+                                    </blockquote>
+                                </div>
+                                <div class="carousel-item text-center pl-4 pr-4 pt-4">
+                                    <blockquote class="blockquote text-center">
+                                        <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Seven years of
+                                            kids’ abuse
+                                            disappeared
+                                            like magic! Exceeded my expectations in every way. I wish I had more cars just
+                                            so I could see the fun transformation again! &nbsp; <i
+                                                class="fa fa-quote-right"></i>
+                                        </p>
+                                        <footer class="blockquote-footer text-white mb-3"><strong>Dan Nahikian</strong>
+                                            <cite title="Car">(GMC Yukon XL)</cite></footer>
+                                        <!-- Client review stars -->
+                                        <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                        <p class="client-review-stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </p>
+                                    </blockquote>
+                                </div>
+                                <div class="carousel-item text-center pl-4 pr-4 pt-4">
+                                    <blockquote class="blockquote text-center">
+                                        <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; All I can say is
+                                            that was
+                                            amazing.
+                                            I have NEVER seen a detail job like this. Minor dent and scratch repairs,
+                                            recommendations, and my car back looking like new. TOP NOTCH GUYS! &nbsp; <i
+                                                class="fa fa-quote-right"></i>
+                                        </p>
+                                        <footer class="blockquote-footer text-white mb-3">
+                                            <strong>Katina Wood</strong>
+                                            <cite title="Car">(Infiniti QX 56)</cite>
+                                        </footer>
+                                        <!-- Client review stars -->
+                                        <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                        <p class="client-review-stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators mb-3">
+                                <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#testimonialCarousel" data-slide-to="1"></li>
+                                <li data-target="#testimonialCarousel" data-slide-to="2"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instagram Section -->
+            <section class="ig-section pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2><i class="fas fa-camera-retro"></i> &nbsp;Let's connect</h2>
+                            <p class="mb-4">We love to see your before &amp; afters and fun
+                                wash
+                                pictures. We encourage you to tag us in your posts and use our hashtag '#buggycarwash' on
+                                any relevant
+                                pictures. If you make us smile, we'd love to share your post on our page! </p>
+                            <!-- LightWidget WIDGET -->
+                            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                            <iframe src="//lightwidget.com/widgets/be3e500451c15da3aa76f3fa53c2267f.html" scrolling="no"
+                             allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+
+                                <a class="font-weight-bold text-uppercase float-right hvr-pop mobile-link"
+                            href=" https://www.instagram.com/buggy_car_wash/" target="_blank">See more <i
+                                class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
-        <!-- Testimonials Section -->
-        <section class="testimonials-section">
-            <div class="container pt-5 pb-5">
-                <div class="row">
-                    <div id="testimonialCarousel" class="carousel slide w-100 pb-3" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active text-center pl-4 pr-4 pt-4">
-                                <blockquote class="blockquote text-center">
-                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Fabulous work!
-                                        Looks like a
-                                        brand
-                                        new car. Will definitely use them again. Thanks again Mike! &nbsp; <i
-                                            class="fa fa-quote-right"></i>
-                                    </p>
-                                    <footer class="blockquote-footer text-white mb-3"><strong>George McTearney</strong>
-                                        <cite title="Car">(Mercedes CLS 550)</cite></footer>
-                                    <!-- Client review stars -->
-                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                                    <p class="client-review-stars text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </p>
-                                </blockquote>
-                            </div>
-                            <div class="carousel-item text-center pl-4 pr-4 pt-4">
-                                <blockquote class="blockquote text-center">
-                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Seven years of
-                                        kids’ abuse
-                                        disappeared
-                                        like magic! Exceeded my expectations in every way. I wish I had more cars just
-                                        so I could see the fun transformation again! &nbsp; <i
-                                            class="fa fa-quote-right"></i>
-                                    </p>
-                                    <footer class="blockquote-footer text-white mb-3"><strong>Dan Nahikian</strong>
-                                        <cite title="Car">(GMC Yukon XL)</cite></footer>
-                                    <!-- Client review stars -->
-                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                                    <p class="client-review-stars text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </p>
-                                </blockquote>
-                            </div>
-                            <div class="carousel-item text-center pl-4 pr-4 pt-4">
-                                <blockquote class="blockquote text-center">
-                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; All I can say is
-                                        that was
-                                        amazing.
-                                        I have NEVER seen a detail job like this. Minor dent and scratch repairs,
-                                        recommendations, and my car back looking like new. TOP NOTCH GUYS! &nbsp; <i
-                                            class="fa fa-quote-right"></i>
-                                    </p>
-                                    <footer class="blockquote-footer text-white mb-3">
-                                        <strong>Katina Wood</strong>
-                                        <cite title="Car">(Infiniti QX 56)</cite>
-                                    </footer>
-                                    <!-- Client review stars -->
-                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                                    <p class="client-review-stars text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </p>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <ol class="carousel-indicators mb-3">
-                            <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#testimonialCarousel" data-slide-to="1"></li>
-                            <li data-target="#testimonialCarousel" data-slide-to="2"></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Parallax Footer -->
+<footer id="pageFooter" class="pt-5 pb-5 page-footer">
 
-        <!-- Instagram Section -->
-        <section class="ig-section pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2><i class="fas fa-camera-retro"></i> &nbsp;Let's connect</h2>
-                        <p class="mb-4">We love to see your before &amp; afters and fun
-                            wash
-                            pictures. We encourage you to tag us in your posts and use our hashtag '#buggycarwash' on
-                            any relevant
-                            pictures. If you make us smile, we'd love to share your post on our page! </p>
-
-                        <!-- LightWidget WIDGET -->
-                        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe
-                            src="//lightwidget.com/widgets/62a8679522b05eddbcf565581233ac11.html" scrolling="no"
-                            allowtransparency="true" class="lightwidget-widget"
-                            style="width:100%;border:0;overflow:hidden;"></iframe>
-
-                        <a class="font-weight-bold text-uppercase float-md-right hvr-pop"
-                            href=" https://www.instagram.com/buggy_car_wash/" target="_blank">See
-                            more <i class="fas fa-arrow-circle-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Parallax Footer -->
-    <footer id="parallaxFooter" class="pt-5 pb-5 page-footer">
-
-        <!-- Footer Container -->
-        <div class="container footer-container mt-5">
-            <div class="row d-flex">
-                <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 mb-4">
-                    <h6 class=" text-uppercase text-white font-weight-bold">
-                        Open 24 Hours!</h6>
-                    <p class="text-white d-flex align-items-center">
-                        <span class="bg-white circle-icon rounded-circle mt-1 mr-3"><i
-                                class="fa fas fa-phone-alt"></i></span>
-                        203-495-9945
-                    </p>
-                    <p class="text-white d-flex justify-content-start">
-                        <span class="bg-white circle-icon rounded-circle mr-3">
-                            <i class="fa fas fa-map-marker-alt"></i></span>
-                        <span>
-                            51 Middletown Ave,<br> North Haven, CT<br> 06473
-                        </span>
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-4 col-xl-2 mb-4 mr-auto">
-                    <h6 class="text-uppercase text-white font-weight-bold">
-                        Explore our Site!</h6>
-                    <nav class="nav d-block w-100">
-                        <a class="nav-link display-4 text-left d-md-block hvr-pop pl-0 text-white active"
-                            title="Car Wash" href="/">Car
-                            Wash</a>
-                        <a class="nav-link display-4 text-left d-md-block hvr-pop pl-md-0 text-white" title="Dog Wash"
-                            href="pages/dogwash.html">Dog Wash</a>
-                        <a class="nav-link display-4 text-left d-md-block hvr-pop pl-md-0 text-white" title="Gift Cards"
-                            href="pages/giftcards.html">Gift
-                            Cards</a>
-                        <a class="nav-link display-4 text-left d-md-block hvr-pop pl-md-0 text-white" title="About Us"
-                            href="pages/aboutus.html">About Us</a>
-                    </nav>
-                </div>
-                <div class="copyright-container col-md-4 col-lg-4 col-xl-3 mb-4 ml-md-auto">
-                    <img src="./assets/images/logos/watermark.png" alt="Buggy Car Wash watermark"
-                        class="img img-fluid mb-3" /><span class="sr-only">Buggy Car Wash - go to
-                        Home</span>
-                    <div class="d-flex justify-content-between">
-                        <p class=" footer-copyright text-white">
-                            &copy;
-                            <script type="text/JavaScript">
-                            document.write(new Date().getFullYear());</script>
-                            Buggy Car Wash.<br> All Rights Reserved.
-                        </p>
-                        <span>
-                            <a target="_blank" class="hvr-pop icon-link circle-icon rounded-circle mr-1 mr-sm-2"
-                                href="https://www.instagram.com/buggy_car_wash/" title="Buggy Instagram Page"><i
-                                    class="fa fab fa-instagram"></i></a>
-                            <a target="_blank" class="hvr-pop icon-link circle-icon rounded-circle"
-                                href="https://www.facebook.com/pages/category/Car-Wash/Buggy-Car-Wash-and-The-Barking-Bath-335929286476531/"
-                                title="Buggy Facebook Page"><i class="fa fab fa-facebook-f"></i></a>
-                        </span>
-                    </div>
-                </div>
+<!-- Footer Container -->
+<div class="container footer-container mt-md-5">
+    <div class="row d-flex">
+        <div class="col-sm-12 col-md-3 mb-4">
+            <h6 class=" text-uppercase text-white font-weight-bold text-center text-md-left">
+                Open 24 Hours!</h6>
+            <p class="text-white d-block d-md-flex align-items-center text-center text-md-left">
+                <span class="phone-link bg-white circle-icon rounded-circle mt-1 mr-3"><i
+                        class="fa fas fa-phone-alt"></i></span>
+                203-495-9945
+            </p>
+            <p class="text-white d-block d-md-flex justify-content-start text-center text-md-left">
+                <span class="bg-white circle-icon rounded-circle mr-3">
+                    <i class="fa fas fa-map-marker-alt"></i></span>
+                <span>
+                    51 Middletown Ave,<br> North Haven, CT<br> 06473
+                </span>
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-4 col-xl-2 mb-4 mr-auto">
+            <h6 class="text-uppercase text-white font-weight-bold text-center text-md-left">
+                Explore our Site!</h6>
+            <nav class="nav d-block w-100">
+                <a class="d-inline-block w-49 w-md-100 text-center nav-link mobile-link display-4 text-md-left d-md-block hvr-pop pl-md-0 text-white"
+                    title="Car Wash" href="/">Car
+                    Wash</a>
+                <a class="d-inline-block w-49 w-md-100 text-center nav-link mobile-link display-4 text-md-left d-md-block hvr-pop pl-md-0 text-white"
+                    title="Dog Wash" href="pages/dogwash.html">Dog Wash</a>
+                <a class="d-inline-block w-49 w-md-100 text-center nav-link mobile-link display-4 text-md-left d-md-block hvr-pop pl-md-0 text-white"
+                    title="Gift Cards" href="pages/giftcards.html">Gift
+                    Cards</a>
+                <a class="d-inline-block w-49 w-md-100 text-center nav-link mobile-link display-4 text-md-left d-md-block hvr-pop pl-md-0 text-white"
+                    title="About Us" href="pages/aboutus.html">About Us</a>
+            </nav>
+        </div>
+        <div class="copyright-container col-md-4 col-lg-4 col-xl-3 mb-4 ml-md-auto">
+            <img src="../assets/images/logos/watermark.png" alt="Buggy Car Wash watermark"
+                class="img img-fluid mb-3" /><span class="sr-only">Buggy Car Wash - go to
+                Home</span>
+            <div class="d-flex justify-content-between">
+                <p class=" footer-copyright text-white">
+                    &copy;
+                    <script type="text/JavaScript">
+                        document.write(new Date().getFullYear());</script>
+                    Buggy Car Wash.<br> All Rights Reserved.
+                </p>
+                <span>
+                    <a target="_blank"
+                        class="hvr-pop icon-link circle-icon circle-link rounded-circle mr-1 mr-sm-2"
+                        href="https://www.instagram.com/buggy_car_wash/" title="Buggy Instagram Page"><i
+                            class="fa fab fa-instagram"></i></a>
+                    <a target="_blank" class="hvr-pop icon-link circle-icon circle-link rounded-circle"
+                        href="https://www.facebook.com/pages/category/Car-Wash/Buggy-Car-Wash-and-The-Barking-Bath-335929286476531/"
+                        title="Buggy Facebook Page"><i class="fa fab fa-facebook-f"></i></a>
+                </span>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
+</footer>
 
         <!-- Pure CSS Animated Bubbles -->
         <div id="background-wrap">

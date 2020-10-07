@@ -39,6 +39,11 @@ table.table-barking-bath {
 }
 
 @include tablet-and-up {
+    table {
+        td {
+            border-left: solid 3px $white;
+        }
+    }
     .table-soft-touch,
     .table-touch-free {
         th, tr {
@@ -65,12 +70,12 @@ table.table-barking-bath {
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
 @include table-responsive {
-
-    /* Remove Best Deal border in Mobile */
-    .border-warning {
-        border: none!important;
+    table {
+        /* Remove Best Deal border in Mobile */
+        .border-warning {
+            border: none!important;
+        }
     }
-
     /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr {
         display: block;

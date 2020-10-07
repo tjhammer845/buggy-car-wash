@@ -106,6 +106,8 @@ table.table-barking-bath .fa-check-circle {
   font-size: 24px; }
 
 @media (min-width: 768px) {
+  table td {
+    border-left: solid 3px #fff; }
   .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
   .table-touch-free th td:first-child,
   .table-touch-free tr td:first-child {
@@ -123,9 +125,10 @@ table.table-barking-bath .fa-check-circle {
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* Remove Best Deal border in Mobile */
-  .border-warning {
-    border: none !important; }
+  table {
+    /* Remove Best Deal border in Mobile */ }
+    table .border-warning {
+      border: none !important; }
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr {
     display: block; }
