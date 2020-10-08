@@ -316,11 +316,11 @@ if (!$mail->send()) {
         <div class="col-sm-12 col-md-3 mb-4">
             <h6 class=" text-uppercase text-white font-weight-bold text-center text-md-left">
                 Open 24 Hours!</h6>
-            <p class="text-white d-block d-md-flex align-items-center text-center text-md-left">
-                <span class="phone-link bg-white circle-icon rounded-circle mt-1 mr-3"><i
-                        class="fa fas fa-phone-alt"></i></span>
-                203-495-9945
-            </p>
+                <p class="phone-link text-white d-block d-md-flex align-items-center text-center text-md-left">
+                        <span class="bg-white circle-icon rounded-circle mt-1 mr-3"><i
+                                class="fa fas fa-phone-alt"></i></span>
+                        203-495-9945
+                    </p>
             <p class="text-white d-block d-md-flex justify-content-start text-center text-md-left">
                 <span class="bg-white circle-icon rounded-circle mr-3">
                     <i class="fa fas fa-map-marker-alt"></i></span>
