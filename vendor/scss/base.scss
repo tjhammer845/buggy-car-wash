@@ -326,11 +326,22 @@ main {
     .carousel-container, .header-container {
         background: $quaternary-color;
         z-index: 2;
-        .carousel-control-next-icon, .carousel-control-prev-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba($green, .95);
-            background-size: 30px;
+        .carousel-control-next, .carousel-control-prev {
+            @include mobile {
+                margin: 0 1rem;
+            }
+            .carousel-control-next-icon, .carousel-control-prev-icon {
+                width: 70px;
+                min-width: 70px;
+                height: 70px;
+                @include mobile {
+                    width: 60px;
+                    min-width: 60px;
+                    height: 60px;
+                    background-color: rgba($green, .95);
+                    background-size: 30px;
+                }
+            }
         }
     }
 
@@ -489,10 +500,7 @@ main {
         background: $secondary-color;
         #testimonialCarousel {
             .carousel-inner  {
-                background: $secondary-color;
-                z-index: 2;
                 min-height:200px;
-                border-radius: $border-radius;
                 .fa {
                     color: $primary-color; 
                 }

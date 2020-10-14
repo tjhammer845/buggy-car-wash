@@ -49,8 +49,18 @@ table.table-barking-bath {
         th, tr {
             td {
                 &:first-child {
-                    max-width: 200px;
+                    min-width: 200px;
+                    width: auto;
                 }
+                width: 20%;
+            }
+        }
+    }
+    .table-self-service,
+    .table-barking-bath {
+        tr {
+            td {
+                width: 33%;
             }
         }
     }

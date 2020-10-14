@@ -108,10 +108,18 @@ table.table-barking-bath .fa-check-circle {
 @media (min-width: 768px) {
   table td {
     border-left: solid 3px #fff; }
-  .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
-  .table-touch-free th td:first-child,
-  .table-touch-free tr td:first-child {
-    max-width: 200px; }
+  .table-soft-touch th td, .table-soft-touch tr td,
+  .table-touch-free th td,
+  .table-touch-free tr td {
+    width: 20%; }
+    .table-soft-touch th td:first-child, .table-soft-touch tr td:first-child,
+    .table-touch-free th td:first-child,
+    .table-touch-free tr td:first-child {
+      min-width: 200px;
+      width: auto; }
+  .table-self-service tr td,
+  .table-barking-bath tr td {
+    width: 33%; }
   /* Add the title for the Best Deal Column */
   .best-deal {
     padding-bottom: 12px !important; }
@@ -124,7 +132,7 @@ table.table-barking-bath .fa-check-circle {
       display: block; } }
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 767px), (min-device-width: 768px) and (max-device-width: 1024px) {
   table {
     /* Remove Best Deal border in Mobile */ }
     table .border-warning {

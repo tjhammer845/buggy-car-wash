@@ -197,101 +197,120 @@ if (!$mail->send()) {
                 </div>
             </section>
 
-            <!-- Testimonials Section -->
-            <section class="testimonials-section">
-                <div class="container pt-5 pb-5">
-                    <div class="row">
-                        <div id="testimonialCarousel" class="carousel slide w-100 pb-3" data-ride="carousel">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active text-center pl-4 pr-4 pt-4">
-                                    <blockquote class="blockquote text-center">
-                                        <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Fabulous work!
-                                            Looks like a
-                                            brand
-                                            new car. Will definitely use them again. Thanks again Mike! &nbsp; <i
-                                                class="fa fa-quote-right"></i>
-                                        </p>
-                                        <footer class="blockquote-footer text-white mb-3"><strong>George McTearney</strong>
-                                            <cite title="Car">(Mercedes CLS 550)</cite></footer>
-                                        <!-- Client review stars -->
-                                        <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                                        <p class="client-review-stars text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </p>
-                                    </blockquote>
-                                </div>
-                                <div class="carousel-item text-center pl-4 pr-4 pt-4">
-                                    <blockquote class="blockquote text-center">
-                                        <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Seven years of
-                                            kids’ abuse
-                                            disappeared
-                                            like magic! Exceeded my expectations in every way. I wish I had more cars just
-                                            so I could see the fun transformation again! &nbsp; <i
-                                                class="fa fa-quote-right"></i>
-                                        </p>
-                                        <footer class="blockquote-footer text-white mb-3"><strong>Dan Nahikian</strong>
-                                            <cite title="Car">(GMC Yukon XL)</cite></footer>
-                                        <!-- Client review stars -->
-                                        <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                                        <p class="client-review-stars text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </p>
-                                    </blockquote>
-                                </div>
-                                <div class="carousel-item text-center pl-4 pr-4 pt-4">
-                                    <blockquote class="blockquote text-center">
-                                        <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; All I can say is
-                                            that was
-                                            amazing.
-                                            I have NEVER seen a detail job like this. Minor dent and scratch repairs,
-                                            recommendations, and my car back looking like new. TOP NOTCH GUYS! &nbsp; <i
-                                                class="fa fa-quote-right"></i>
-                                        </p>
-                                        <footer class="blockquote-footer text-white mb-3">
-                                            <strong>Katina Wood</strong>
-                                            <cite title="Car">(Infiniti QX 56)</cite>
-                                        </footer>
-                                        <!-- Client review stars -->
-                                        <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-                                        <p class="client-review-stars text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </p>
-                                    </blockquote>
-                                </div>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div id="testimonialCarousel" class="carousel slide w-100 pb-3" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active text-center pl-4 pr-4 pt-4">
+                                <blockquote class="blockquote text-center">
+                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Great
+                                        prices! Great services offered! I did the soft touch and my car looked
+                                        beautiful. The
+                                        signs around the building are fun/funny. Seem like they have cool owners. &nbsp;
+                                        <i class="fa fa-quote-right"></i>
+                                    </p>
+                                    <footer class="blockquote-footer text-white mb-3"><strong>Debbie Allen</strong>
+                                        <cite title="Car">(Mercedes CLS 550)</cite></footer>
+                                    <!-- Client review stars -->
+                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                    <p class="client-review-stars text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </p>
+                                </blockquote>
                             </div>
-                            <ol class="carousel-indicators mb-3">
-                                <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#testimonialCarousel" data-slide-to="1"></li>
-                                <li data-target="#testimonialCarousel" data-slide-to="2"></li>
-                            </ol>
+                            <div class="carousel-item text-center pl-4 pr-4 pt-4">
+                                <blockquote class="blockquote text-center">
+                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; Best car wash in
+                                        the area by far! Tons of amenities, and the staff is super friendly (shoutout to
+                                        Vinny!) &nbsp; <i class="fa fa-quote-right"></i>
+                                    </p>
+                                    <footer class="blockquote-footer text-white mb-3"><strong>Zach Hahn</strong>
+                                        <cite title="Car">(GMC Yukon XL)</cite></footer>
+                                    <!-- Client review stars -->
+                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                    <p class="client-review-stars text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="carousel-item text-center pl-4 pr-4 pt-4">
+                                <blockquote class="blockquote text-center">
+                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; I love these
+                                        types of car washes. It makes washing cars fun. You have plenty of options in
+                                        terms of different types of cleaners, conditioners and it&rsquo;s all made pretty easy
+                                        and quick. &nbsp; <i class="fa fa-quote-right"></i>
+                                    </p>
+                                    <footer class="blockquote-footer text-white mb-3">
+                                        <strong>Dmitri Alvarado</strong>
+                                        <cite title="Car">(Infiniti QX 56)</cite>
+                                    </footer>
+                                    <!-- Client review stars -->
+                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                    <p class="client-review-stars text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="carousel-item text-center pl-4 pr-4 pt-4">
+                                <blockquote class="blockquote text-center">
+                                    <p class="text-white mb-0"><i class="fa fa-quote-left"></i> &nbsp; I had a positive
+                                        experience with the 24 hour touchless car wash. I was greeted by friendly
+                                        faces, my car came out clean and it was easy to select the option.
+                                        Easy to follow instructions. I will definitely be back! &nbsp;
+                                        <i class="fa fa-quote-right"></i>
+                                    </p>
+                                    <footer class="blockquote-footer text-white mb-3">
+                                        <strong>Veronica Rodriguez</strong>
+                                        <cite title="Car">(BMW 3 Series)</cite>
+                                    </footer>
+                                    <!-- Client review stars -->
+                                    <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                    <p class="client-review-stars text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </p>
+                                </blockquote>
+                            </div>
                         </div>
+                        <ol class="carousel-indicators mb-3">
+                            <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#testimonialCarousel" data-slide-to="1"></li>
+                            <li data-target="#testimonialCarousel" data-slide-to="2"></li>
+                            <li data-target="#testimonialCarousel" data-slide-to="3"></li>
+                        </ol>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
             <!-- Instagram Section -->
             <section class="ig-section pt-5 pb-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2><i class="fas fa-camera-retro"></i> &nbsp;Let's connect</h2>
+                            <h2><i class="fas fa-camera-retro"></i> &nbsp;Let&rsquo;s connect</h2>
                             <p class="mb-4">We love to see your before &amp; afters and fun
                                 wash
-                                pictures. We encourage you to tag us in your posts and use our hashtag '#buggycarwash' on
+                                photos. We encourage you to tag us in your posts and use our hashtag &lsquo;#buggycarwash&rsquo; on
                                 any relevant
-                                pictures. If you make us smile, we'd love to share your post on our page! </p>
+                                pictures. If you make us smile, we&rsquo;d love to share your post on our page! </p>
                             <!-- LightWidget WIDGET -->
                             <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                             <iframe src="//lightwidget.com/widgets/be3e500451c15da3aa76f3fa53c2267f.html" scrolling="no"
