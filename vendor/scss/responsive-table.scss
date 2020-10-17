@@ -79,7 +79,7 @@ table.table-barking-bath {
 }
 
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
-@include table-responsive {
+@include mobile {
     table {
         /* Remove Best Deal border in Mobile */
         .border-warning {

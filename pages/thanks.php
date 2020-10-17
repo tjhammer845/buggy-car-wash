@@ -38,8 +38,6 @@ if (!$mail->send()) {
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
         <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon" />
 
         <title>
@@ -85,7 +83,7 @@ if (!$mail->send()) {
                             </span>
                             <span class="pt-2 pb-2 pt-md-0 pb-md-0 ">
                                 <a target="_blank"
-                                    class="hvr-pop icon-link circle-icon circle-link rounded-circle mr-1 mr-sm-2"
+                                    class="hvr-pop icon-link circle-icon circle-link rounded-circle mr-2"
                                     href="https://www.instagram.com/buggy_car_wash/" title="Buggy Instagram Page"><i
                                         class="fa fab fa-instagram"></i></a>
                                 <a target="_blank" class="hvr-pop icon-link circle-icon circle-link rounded-circle"
@@ -138,64 +136,75 @@ if (!$mail->send()) {
 
         <!-- Main -->
         <main class="content w-100 drop-shadow">
-            <section class="carousel-container carousel-section pb-2 pb-sm-5">
-                <div class="container-fluid p-0">
-                    <div id="carouselMain" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselMain" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselMain" data-slide-to="1"></li>
-                            <li data-target="#carouselMain" data-slide-to="2"></li>
-                            <li data-target="#carouselMain" data-slide-to="3"></li>
-                            <li data-target="#carouselMain" data-slide-to="4"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block img w-100" src="../assets/images/slideshow/buggy-slide-1.jpg"
-                                    alt="First slide" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img w-100" src="../assets/images/slideshow/buggy-slide-2.jpg"
-                                    alt="Second slide" />
 
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img w-100" src="../assets/images/slideshow/buggy-slide-3.jpg"
-                                    alt="Third slide" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img w-100" src="../assets/images/slideshow/buggy-slide-4.jpg"
-                                    alt="Fourth slide" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img w-100" src="../assets/images/slideshow/buggy-slide-5.jpg"
-                                    alt="Fifth slide" />
-                            </div>
+        <!-- Carousel Section -->
+        <section class="carousel-container carousel-section pb-2 pb-sm-5">
+            <div class="container-fluid p-0">
+                <div id="carouselMain" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselMain" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselMain" data-slide-to="1"></li>
+                        <li data-target="#carouselMain" data-slide-to="2"></li>
+                        <li data-target="#carouselMain" data-slide-to="3"></li>
+                        <li data-target="#carouselMain" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="desktop-show img w-100" src="./assets/images/slideshow/buggy-slide-1.jpg"
+                                alt="First slide" />
+                            <img class="mobile-show img w-100" src="./assets/images/slideshow/buggy-slide-1-mobile.jpg"
+                                alt="First slide" />
                         </div>
-                        <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon rounded-circle" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon rounded-circle" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Welcome Section -->
-            <section class="welcome-section">
-                <div class="container">
-                    <div class="row mt-lg-5 pb-5">
-                        <div class="col-12">
-                            <h1 class="text-left text-md-center pt-5 pb-3">Thank you for contacting us!</h1>
-                            <p class="text-left text-md-center pb-5">
-                                <?php echo $mailConfirmation; ?>
-                            </p>
+                        <div class="carousel-item">
+                            <img class="desktop-show img w-100" src="./assets/images/slideshow/buggy-slide-2.jpg"
+                                alt="Second slide" />
+                            <img class="mobile-show img w-100" src="./assets/images/slideshow/buggy-slide-2-mobile.jpg"
+                                alt="Second slide" />
+                        </div>
+                        <div class="carousel-item">
+                            <img class="desktop-show img w-100" src="./assets/images/slideshow/buggy-slide-3.jpg"
+                                alt="Third slide" />
+                            <img class="mobile-show img w-100" src="./assets/images/slideshow/buggy-slide-3-mobile.jpg"
+                                alt="Third slide" />
+                        </div>
+                        <div class="carousel-item">
+                            <img class="desktop-show img w-100" src="./assets/images/slideshow/buggy-slide-4.jpg"
+                                alt="Fourth slide" />
+                            <img class="mobile-show img w-100" src="./assets/images/slideshow/buggy-slide-4-mobile.jpg"
+                                alt="Fourth slide" />
+                        </div>
+                        <div class="carousel-item">
+                            <img class="desktop-show img w-100" src="./assets/images/slideshow/buggy-slide-5.jpg"
+                                alt="Fifth slide" />
+                            <img class="mobile-show img w-100" src="./assets/images/slideshow/buggy-slide-5-mobile.jpg"
+                                alt="Fifth slide" />
                         </div>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon rounded-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon rounded-circle" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <div class="row mt-lg-5 pb-5">
+                    <div class="col-12">
+                        <h1 class="text-left text-md-center pt-5 pb-3">Thank you for contacting us!</h1>
+                        <p class="lead text-left text-md-center pb-5">
+                            <?php echo $mailConfirmation; ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Testimonials Section -->
         <section class="testimonials-section">
@@ -377,7 +386,7 @@ if (!$mail->send()) {
                 </p>
                 <span>
                     <a target="_blank"
-                        class="hvr-pop icon-link circle-icon circle-link rounded-circle mr-1 mr-sm-2"
+                        class="hvr-pop icon-link circle-icon circle-link rounded-circle mr-2"
                         href="https://www.instagram.com/buggy_car_wash/" title="Buggy Instagram Page"><i
                             class="fa fab fa-instagram"></i></a>
                     <a target="_blank" class="hvr-pop icon-link circle-icon circle-link rounded-circle"
