@@ -268,7 +268,7 @@ body {
 
 // Header
 header {
-    z-index: 3;
+    z-index: 4;
 
     // Top Bar
     #topBar {
@@ -285,8 +285,11 @@ header {
             font-size: 0.938rem;
         }
         @include mobile{
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 600;
+        }
+        @include smaller-mobile{
+            font-size: 1.25rem;
         }
     }
 
@@ -297,7 +300,7 @@ header {
 
         // Site Logo - Linked to Homepage
         .navbar-brand {
-            z-index: 4;
+            z-index: 5;
             @include desktop-sm-and-below {
                 width: calc(100% - 72px);
             }
@@ -337,6 +340,7 @@ header {
 
 // Main Content
 main {
+    z-index: 1;
 	position: relative;
     background: $quinary-color;
     @include tablet-and-up {
@@ -349,7 +353,7 @@ main {
     // Carousel/Header Image Section
     .carousel-container, .header-container {
         background: $quaternary-color;
-        z-index: 2;
+        z-index: 3;
         .carousel-control-next, .carousel-control-prev {
             @include mobile {
                 margin: 0 1rem;
@@ -508,7 +512,7 @@ main {
     // Contact Section
     .contact-section {
         background: $white;
-        z-index: 2;
+        z-index: 3;
         .active {
             background: $green!important;
             &:before {
@@ -563,7 +567,7 @@ main {
                 @include mobile {
                     min-height: 280px;
                 }
-                @include smaller-mobile {
+                @include smallest-mobile {
                     min-height: 350px;
                 }
             }
@@ -580,17 +584,17 @@ main {
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
+            z-index: 0;
         }
         @include mobile {
             position: relative!important;
             left: initial!important;
             right: initial!important;
             bottom: initial!important;
-            z-index: 0!important;
+            z-index: 1!important;
         }
         .footer-container {
-            z-index: 3;
+            z-index: 4;
             p {
                 font-size: 1rem;
                 line-height: 1.4;
@@ -601,11 +605,17 @@ main {
                     font-size: 0.938rem;
                 }
             }
+            .footer-address {
+                .address-note {
+                    font-size: .8rem;
+                    font-style: italic;
+                }
+            }
             .copyright-container {
                 max-width: 270px;
                 @include mobile {
                     max-width: 290px;
-                    margin: 3rem auto;
+                    margin: 1.5rem auto;
                 }
             }
         }

@@ -7,7 +7,6 @@
 @media (min-width: 768px) {
   /* Set canvas size of viewport */
   #background-wrap {
-    bottom: 395px;
     left: 0;
     position: fixed;
     right: 0;
