@@ -1,24 +1,24 @@
 /*********************************************/
-/*** BUGGY CAR WASH - VARIABLES STYLESHEET ***/
+/*** BOSS BODY CAR WASH - VARIABLES STYLESHEET ***/
 /*********************************************/
 
 
 /* Color Sceme */
-$primary-color: #1E5B8F; // buggy dark blue
-$secondary-color: #0084B5; // buggy light blue
-$tertiary-color: #F7D441; // buggy yellow
-$quaternary-color: #97D0E7; // buggy background lighter blue
-$quinary-color: #D4EBF5; // buggy background lightest blue
+$primary-color: #1E5B8F; // boss body dark blue
+$secondary-color: #0084B5; // boss body light blue
+$tertiary-color: #F7D441; // boss body yellow
+$quaternary-color: #97D0E7; // boss body background lighter blue
+$quinary-color: #D4EBF5; // boss body background lightest blue
 
 
-$gradient-light-blue: #B5E1F2; // buggy gradient - light blue - top
-$gradient-dark-blue: #1384B5;// buggy gradient - dark blue - bottom
+$gradient-light-blue: #B5E1F2; // boss body gradient - light blue - top
+$gradient-dark-blue: #1384B5;// boss body gradient - dark blue - bottom
 
 $white: #fff; // default white
 $black: #000; // default black
 $red: #ED2324; // alert red
-$green: #17B25F; // buggy green
-$yellow: #ffc107; // buggy yellow and bootstrap warning yellow
+$green: #17B25F; // boss body green
+$yellow: #ffc107; // boss body yellow and bootstrap warning yellow
 
 /* Font Stack */
 $primary-font-stack: "Source Sans Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -36,7 +36,7 @@ $border-radius: 15px;
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 
-/* Buggy Bubble Pop CSS3 Effects */
+/* BOSS BODY Bubble Pop CSS3 Effects */
 // Pop
 @-webkit-keyframes hvr-pop {
     50% {
