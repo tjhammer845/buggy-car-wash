@@ -3,11 +3,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 require '../vendor/autoload.php';
 
 $to =  'buggycarwash1@gmail.com';
-$from =  $_POST['email'];
+$from =  'team@buggycarwash.com';
+$email = $_POST['email'];
 $name =  $_POST['name'];
 $subject =  $_POST['subject'];
-$body =  $_POST['body'];
-$txt = "You have received an e-mail from ".$name." - ".$from.".\n___\n\n\n".$body;
+$body =  $_POST['message'];
+$txt = "You have received an e-mail from ".$name." - ".$email.".\n___\n\n\n".$body;
 
 
 $mail = new PHPMailer;
@@ -17,7 +18,7 @@ $mail->Host = 'smtp.bluehost.com';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
 $mail->Username = 'team@buggycarwash.com';
-$mail->Password = 'ENTER PASSWORD';
+$mail->Password = 'Bigfrank18?';
 $mail->setFrom($from, $name);
 $mail->AddReplyTo($from, $name);
 $mail->AddAddress($to);
@@ -25,7 +26,6 @@ $mail->FromName=$name;
 $mail->Sender=$from;
 $mail->Subject=$subject;
 $mail->Body=$txt;
-//$mail->addAttachment('test.txt');
 
 if (!$mail->send()) {
     $mailConfirmation = "Please try again later, an error occured while processing your message..." . $mail->ErrorInfo;
@@ -357,7 +357,7 @@ if (!$mail->send()) {
                         <span class="bg-white circle-icon rounded-circle 
                             d-block d-md-inline mb-2 mr-auto ml-auto mt-1 ml-md-0 mr-md-3"><i
                                 class="fa fas fa-clock"></i></span>
-                        <span><strong>Auto Washes:</strong> 5am-2am<br>
+                        <span><strong>Auto Washes:</strong> 24 hours<br>
                             <strong>Self-Service:</strong> 24 hours<br>
                             <strong>Dog Wash:</strong> 8am-5pm<br>
                             <i class="address-note">&ast;Weather permitting</i></span>
@@ -381,13 +381,11 @@ if (!$mail->send()) {
                 </div>
                 <div class="copyright-container col-md-4 col-lg-4 col-xl-3 mb-4 ml-md-auto">
                     <img src="../assets/images/logos/watermark.png" alt="Buggy Car Wash watermark"
-                        class="img img-fluid mb-3" /><span class="sr-only">Buggy Car Wash - go to
-                        Home</span>
+                        class="img img-fluid mb-3" /><span class="sr-only">Buggy Car Wash - go to Home</span>
                     <div class="d-flex justify-content-between">
                         <p class=" footer-copyright text-white">
                             &copy;
-                            <script type="text/JavaScript">
-                                document.write(new Date().getFullYear());</script>
+                            <script type="text/JavaScript">document.write(new Date().getFullYear());</script>
                             Buggy Car Wash.<br> All Rights Reserved.
                         </p>
                         <span>
