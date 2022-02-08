@@ -2,8 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require '../vendor/autoload.php';
 
-$to =  'buggycarwash1@gmail.com';
-$from =  'team@buggycarwash.com';
+$to =  'team@buggycarwash.com';
 $email = $_POST['email'];
 $name =  $_POST['name'];
 $subject =  $_POST['subject'];
@@ -12,18 +11,19 @@ $txt = "You have received an e-mail from ".$name." - ".$email.".\n___\n\n\n".$bo
 
 
 $mail = new PHPMailer;
-// $mail->isSMTP(); for local testing
-$mail->SMTPDebug = 2;
 $mail->Host = 'smtp.bluehost.com';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
 $mail->Username = 'team@buggycarwash.com';
 $mail->Password = 'Bigfrank18?';
-$mail->setFrom($from, $name);
-$mail->AddReplyTo($from, $name);
+$mail->SMTPSecure = 'ssl';
+$mail->SMTPDebug = 1;
+$mail->setFrom($email, $name);
+$mail->AddReplyTo($email, $name);
 $mail->AddAddress($to);
+$mail->From=$email;
 $mail->FromName=$name;
-$mail->Sender=$from;
+$mail->Sender=$email;
 $mail->Subject=$subject;
 $mail->Body=$txt;
 
