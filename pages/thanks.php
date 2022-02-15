@@ -15,7 +15,7 @@ $mail->Host = 'smtp.bluehost.com';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
 $mail->Username = 'team@buggycarwash.com';
-$mail->Password = 'Bigfrank18?';
+$mail->Password = 'change password here';
 $mail->SMTPSecure = 'ssl';
 $mail->SMTPDebug = 1;
 $mail->setFrom($email, $name);
